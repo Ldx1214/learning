@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript两种通用性的绑定事件的方式</title>
+        <script type="text/javascript">
+            function test1(){
+                alert("绑定HTML元素属性");
+            }
+
+            function test2(){
+                alert("绑定DOM对象属性");
+            }
+        </script>
+    </head>
+    <body>
+        <a href="https://www.baidu.com" onclick="return false">百度</a>
+        <input type="button" id="test1" value="测试1" onclick="test1()">
+        <button type="button" id="test2"><b>测试2</b></button>
+
+        <script type="text/javascript">
+            document.getElementById("test2").onclick=test2;
+        </script>
+    </body>
+</html>

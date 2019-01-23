@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML文件</title>
+    <script>
+        window.onload=function () {
+            var d=document.getElementById('d');
+            //内容发生改变，并焦点发生改变，才可以监听到
+            d.onchange=function () {
+                alert('内容发生改变')
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="d" value="">
+</body>
+</html>
+
