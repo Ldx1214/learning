@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建DOM元素</title>
+	<style>
+		div{
+			width: 460px;
+			height: auto;
+			font-size: 20px;
+			border: 1px solid blue;
+			margin-top: 10px;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oUl=document.getElementById("ul");
+			var oLi=oUl.getElementsByTagName("li");
+			var oBtn=document.getElementById("btn");
+			var oText=document.getElementById("text");
+			oBtn.onclick=function(){
+				var aLi=document.createElement('li');//添加元素
+				aLi.innerHTML=oText.value;
+				if (oLi.length==0) {
+					oUl.appendChild(aLi);
+				}else{
+					oUl.insertBefore(aLi,oLi[0]);
+				}
+				
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="text" value="请输入要添加名称">
+	<input type="button" value="点击添加元素" id="btn">
+	<div>
+		<ul id="ul">
+			
+		</ul>
+	</div>
+	<p>声明：如果起始ul内没有li则通过appendChild来添加(在后边添加)，否则通过insertBefore来添加(选择位置添加)</p>
+</body>
+</html>

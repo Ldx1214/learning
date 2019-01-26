@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+	<script type="text/javascript" language="Javascript"> 
+function InputOnBlur() 
+{    var name=document.getElementById("name").value; 
+ 
+     if(name.length >10 || name.length<2) 
+       { 
+        var element=document.getElementById("message"); 
+      if(element) 
+      { 
+      //alert(element.parentNode.innerHTML); 
+      element.parentNode.removeChild(element); 
+      } 
+               var MySpan=document.createElement("span"); 
+               document.getElementById("containers").appendChild(MySpan); 
+               MySpan.id = "message"; 
+               MySpan.innerHTML = "请输入正确的姓名"; 
+        } 
+         
+     else{ 
+      var element=document.getElementById("message"); 
+      if(element) 
+      { 
+      //alert(element.innerHTML); 
+      element.parentNode.removeChild(element); 
+      } 
+               var MySpan=document.createElement("span"); 
+               document.getElementById("containers").appendChild(MySpan); 
+               MySpan.id = "message"; 
+               MySpan.innerHTML = "该用户名输入正确"; 
+          } 
+} 
+</script>
+<div>  
+姓名：<input id="name" type="text" onblur="InputOnBlur()" /><span id="containers"></span></div>  
+<script language="javascript">  
+document.getElementById("containers").innerHTML = "<font color=red>请输入姓名</font>";  
+</script>
+</body>
+</html>

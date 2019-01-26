@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title>
+<script>
+function mouseDown()
+{
+	document.getElementById("p1").style.color="red";
+}
+
+function mouseUp()
+{
+	document.getElementById("p1").style.color="green";
+}
+</script>
+</head>
+<body>
+
+<p id="p1" onmousedown="mouseDown()" onmouseup="mouseUp()">
+点击文本! 
+在鼠标按下时触发 mouseDown()函数，该函数修改文本样式为红色。
+在鼠标松开时触发 mouseUp()函数,该函数修改文本样式为绿色。
+</p>
+
+</body>
+</html>
