@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<button onclick="myFunction()">点击这里</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction()
+{
+var x="";
+var time=new Date().getHours();
+if (time<20)
+  {
+  x="Good day";
+  }
+else
+  {
+  x="Good evening";
+  }
+document.getElementById("demo").innerHTML=x;
+}
+</script>
+
+</body>
+</html>
