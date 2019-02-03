@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+	<script>
+			function A(callback) {
+			    callback();  
+			    console.log('我是主函数');      
+			}
+			function B(){
+			    setTimeout("console.log('我是回调函数')", 3000);  
+			}
+			A(B);
+	</script>
+</body>
+</html>
