@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learning</title>
+</head>
+<body>
+    <script>
+        function Person(){    
+        var name = "default";         
+        return {    
+           getName : function(){    
+               return name;    
+           },    
+           setName : function(newName){    
+               name = newName;    
+           }    
+        }    
+        };   
+        var p = new Person();
+        p.setName("Tom");
+        alert(p.getName());
+        var Jack = function(){};
+        Jack.prototype = new Person();
+        Jack.prototype.Say = function(){
+            alert("Hello,my name is Jack");
+        };
+        var j = new Jack();
+        j.setName("Jack");
+        j.Say();
+        alert(j.getName());
+    </script>
+</body>
+</html>
