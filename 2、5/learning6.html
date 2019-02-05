@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>learning</title>
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+  <meta http-equiv="description" content="This is my page">
+  <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+  <script type="text/javascript">
+    function deleteTag()
+    {
+      var regx = /<[^>]*>|<\/[^>]*>/gm;
+      var tagStr = $("#ul_li").html();
+      alert("替换之前的字符串：" + tagStr);
+      var result = tagStr.replace(regx,"");
+      alert("替换之后的字符串：" + result);
+    }
+  </script>
+ </head>
+ <body>
+   <ul id="ul_li">
+    <li class="peach">桃树</li>
+    <li class="pear">梨树</li>
+    <li>樟树</li>
+    <li>枫树</li>
+    <li>松树</li>
+   </ul>
+   <input type="button" value="替换HTML标签" onclick="deleteTag()"/>
+ </body>
+</html>
