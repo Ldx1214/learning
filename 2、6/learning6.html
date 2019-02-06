@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title>learning</title> 
+<style> 
+canvas { 
+position: absolute; 
+} 
+</style> 
+</head> 
+<body> 
+<div class="box"> 
+<canvas id="layer1" width="200" height="200"></canvas> 
+<canvas id="layer2" width="500" height="500"></canvas> 
+</div> 
+<script type="text/javascript"> 
+function getRect(obj) { 
+var x1 = obj.offsetLeft; 
+var y1 = obj.offsetTop; 
+var x2 = x1+obj.offsetWidth; 
+var y2 = y1+obj.offsetHeight; 
+return { 
+x1: x1, 
+y1: y1, 
+x2: x2, 
+y2: y2 
+}; 
+} 
+function inside(x, y, rect) { 
+if(x>rect.x1 && x<rect.x2 && y>rect.y1 && y<rect.y2) { 
+return true; 
+} 
+else { 
+return false; 
+} 
+} 
+var trigger = {}; 
+trigger.list = []; 
+trigger.listen = function() { 
+var list = trigger.list; 
+document.addEventListener('click',function(evt) { 
+for(var i=0; i<list.length; ++i) { 
+list[i](evt); 
+} 
+}); 
+}; 
+trigger.listen(); 
+var l1 = document.getElementById('layer1'); 
+var l2 = document.getElementById('layer2'); 
+var dl1 = function(evt) { 
+if(inside(evt.clientX, evt.clientY, getRect(l1))) { 
+console.log('click'); 
+} 
+} 
+trigger.list.push(dl1); 
+var dl2 = function(evt) { 
+if(inside(evt.clientX, evt.clientY, getRect(l2))) { 
+console.log('click2'); 
+} 
+} 
+trigger.list.push(dl2); 
+</script> 
+</body> 
+</html>

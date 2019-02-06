@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+function bubbleSort(arr){
+    for(var i=0;i<arr.length;i++){
+        for(var j=i;j<arr.length;j++){
+            if(arr[i]<arr[j]){
+                var temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+}
+var arr=[32,55,78,43,78,10,45,20,9,89];
+bubbleSort(arr);
+for(var i=0;i<arr.length;i++){
+    document.write(arr[i]+",");
+}
+</script>
+</body>
+</html>
