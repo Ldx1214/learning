@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变HTML内容</title>
+</head>
+<body>
+	<div id="container">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+	<button onclick="output()"></button>
+	<script type="text/javascript">
+		function output() {
+			document.write("<p>hellow</p>")
+		}
+		document.write("<p>hellow</p>")
+		alert(document.getElementById("container").innerHTML)
+	</script>
+</body>
+</html>

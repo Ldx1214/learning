@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var string='hello world'; 
+            console.log(string.charAt(6));
+            var string1=string.concat('-lww');
+            console.log(string1); 
+            var string2=string.concat('-lww','kk','!','xiangruding'); 
+            console.log(string2); 
+            var string4=string.substr(3); 
+            console.log(string4);
+            var string8=string.substr(3,7);
+            console.log(string8);
+            var string5=string.substring(3); 
+            console.log(string5);
+            var string9=string.substring(3,7); 
+            console.log(string9);
+            var string6=string.slice(3); 
+            console.log(string6)
+            var string7=string1.slice(3,7); 
+            console.log(string7);
+            var string10=string.indexOf('l'); 
+            console.log(string10);
+            var string12=string.indexOf('o',6); 
+            console.log(string12);
+            var string11=string.lastIndexOf('l'); 
+            console.log(string11);
+            var string13='hello world this is a string html you can see it'; 
+            var position=new Array(); 
+            var pos=string13.indexOf('i'); 
+            while(pos>-1){ 
+                position.push(pos); 
+                pos=string13.indexOf('i',pos+1); 
+            } 
+            console.log(position);
+            console.log(position[0]);
+            var string14='    hello world '; 
+            console.log(string14); 
+            var string15=string14.trim(); 
+            console.log(string15);
+            var string16=string.toLocaleUpperCase(); 
+            console.log(string16);
+            var string17=string.toUpperCase(); 
+            console.log(string17);
+            var string18=string17.toLowerCase(); 
+            console.log(string18);
+            var string19=string17.toLocaleLowerCase(); 
+            console.log(string19);
+            var string20=string.replace('l','k'); 
+            console.log(string20);
+            var string21=string.search('l'); 
+            console.log(string21);
+            var string22=string.split(' '); 
+            console.log(string22);
+            var string23='red,yellow,green,blue'; 
+            var string24=string23.split(',');
+            console.log(string24);
+            var string25=string23.split(',',1);
+            console.log(string25);
+            var string26='red'; 
+            var string27=string26.localeCompare('yellow');
+            console.log(string27)
+            var string28=string26.localeCompare('red');
+            console.log(string28);
+            var string29=string26.localeCompare('ahh');
+            console.log(string29) 
+            var string30=string26.localeCompare('rff');
+            console.log(string30);
+        </script>
+    </body>
+</html>

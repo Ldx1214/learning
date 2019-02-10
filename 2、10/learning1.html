@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>tittle</title>
+    <script type="text/javascript">
+        function add(num1,num2){
+            var result = num1+num2;
+            return result;
+        }
+        var minus = function (num1,num2){
+            var result = num1-num2;
+            return result;
+        }
+        var mul = new Function("num1","num2","return num1*num2");
+        function test1(){
+            s1 = "newApple";
+        }
+        var test2 = function(){
+            s1 = "banana";
+            var s1 = "orange";
+            s1 = "peach";
+        }
+        function test3(){
+            document.write("test3被调用"+"<br/>");
+            function test4(){
+                document.write("test4被调用"+"<br/>");
+            }
+            test4();
+        }
+        document.write(add(1,2)+"<br/>");
+        document.write(minus(8,2)+"<br/>");
+        document.write(mul(8,2)+"<br/>");
+        document.write(add.call(window,4,8)+"<br/>")
+        document.write(add.apply(window,[2,8])+"<br/>");
+        var  s1;
+        s1 = "apple";
+        document.write("s1:"+s1+"<br/>")
+        test1();
+        document.write("s1:"+s1+"<br/>")
+        test2();
+        document.write("s1:"+s1+"<br/>")
+        test3();
+    </script>
+</head>
+<body>
+</body>
+</html>

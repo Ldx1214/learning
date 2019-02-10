@@ -1,0 +1,20 @@
+<html>
+<head>
+<metacharset=gb2312" />
+<title>tlttle</title>
+<script language="JavaScript" type="text/javascript">
+var str = "这个是测试用的范例文字";
+var seq = 0;
+var second=1000;
+function scroll() {
+msg = str.substring(0, seq+1);
+document.getElementById('word').innerHTML = msg;
+seq++;
+if (seq >= str.length) seq = 0;
+}
+</script>
+</head>
+<body onload="setInterval('scroll()',second)">
+<div id="word"></div>
+</body>
+</html>
