@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+ <script>
+    function A(){
+        var funs=[];
+        for(var i=0;i<10;i++){
+           funs[i] = function anonymous1(num){
+                        return function anonymous2(){
+                    return num;
+                }
+            }(i);
+        }
+        return funs; 
+    }
+    var funs = A();
+    console.log(funs[0]());
+    console.log(funs[1]());
+    console.log(funs[6]());
+</script>
+</body>
+</html>

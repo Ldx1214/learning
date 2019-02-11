@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for与onclick配合</title>
+    <script type="text/javascript">
+    window.onload=function(){
+        var btn=document.getElementsByTagName("input");
+         for(var i=0;i<btn.length;i++){
+         btn[i].onclick=function(){
+                alert(this.value);
+           }    
+    }
+}
+    </script>
+</head>
+<body>
+<input type="button" value="for循环"/>
+<input type="button" value="事件处理"/>
+<input type="button" value="弹窗显示"/>
+</body>
+</html>

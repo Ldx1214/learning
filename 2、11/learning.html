@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<Script type="text/javascript">
+function Calc()
+{
+var x=parseInt(document.getElementById("Text1").value);
+var y=parseInt(document.getElementById("Text2").value);
+var xPOWy=Math.pow(x,y);
+document.getElementById("Text3").value=xPOWy;
+}
+</Script>
+</HEAD>
+<BODY>
+<Input Type="Text" Size="10" Id="Text1" Value="0">的<Input Type="Text" Size="5" Id="Text2" Value="2">次方，等于<Input Type="Text" Size="20" Id="Text3" Value="0">
+<Input Type="Button" Value="计算" OnClick="Calc();">
+</BODY>
+</HTML>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learning</title>
+</head>
+<body>
+ <script>
+    function A(){
+        var x = 1;
+        var m=[];
+        m[0] = function(){
+            x++;
+            console.log(x);
+        };
+        m[1] = function(){
+            x++;
+            console.log(x);
+        }
+         return m;
+    }
+    var m = A();
+    m[0]();
+    m[1]();
+    m[0]();
+    m[1]();
+</script>
+</body>
+</html>
