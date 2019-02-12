@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learning</title>
+</head>
+<body>
+    <p>for循环乘法表</p>
+        <button onclick="myFunction()">点击这里</button>
+        <p id="demo"></p>
+        <script>
+            function myFunction(){
+                 var x="";
+                for(var i=1;i<10;i++){
+                    for (var j=1; j<=i;j++) {
+                    x=j+"*"+i+"="+(j*i)+"&nbsp;&nbsp;";
+                    document.getElementById("demo").innerHTML+=x;    
+                    }
+                    document.getElementById("demo").innerHTML +="<br>";
+                    }
+                                
+                }
+        </script>
+</body>
+</html>

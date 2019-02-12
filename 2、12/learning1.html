@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="utf-8"> 
+<title>learning</title> 
+<script> 
+countDownSeconds = 60; 
+var handle = null; 
+function onLoadWindow() { 
+aCanvas = document.getElementById("countdownCanvas"); 
+context = aCanvas.getContext("2d"); 
+var canvasText = "Press to Start..."; 
+var xPos = aCanvas.width / 2; 
+var yPos = aCanvas.height / 2; 
+context.font = "12pt Century Gothic"; 
+context.fillStyle = "#008000;"; 
+context.textAlign = "center"; 
+context.textBaseline = "middle"; 
+context.fillText(canvasText, xPos, yPos); 
+} 
+function updateCanvas(theContext, width, height) { 
+if (countDownSeconds < 0) { 
+clearInterval(handle); 
+handle = null; 
+alert("hey, time is up!"); 
+return 0; 
+} 
+minStr = Math.floor(countDownSeconds / 60); 
+secStr = countDownSeconds % 60; 
+if (minStr < 10) { 
+minStr = "0" + minStr; 
+} 
+if (secStr < 10) { 
+secStr = "0" + secStr; 
+} 
+context.clearRect(0, 0, width, height); 
+context.font = "24pt Century Gothic"; 
+context.fillText(minStr + " : " + secStr, width / 2, height / 2); 
+countDownSeconds--; 
+} 
+function startWorkCountDown() { 
+if (handle != null) { 
+clearInterval(handle); 
+} 
+countDownSeconds = document.getElementById("workIntervalInput").value * 60; 
+timeDisplayCanvas = document.getElementById("countdownCanvas"); 
+timeDisplayContext2D = timeDisplayCanvas.getContext("2d"); 
+updateCanvas(timeDisplayContext2D, timeDisplayCanvas.width, timeDisplayCanvas.height); 
+handle = setInterval(function() { 
+updateCanvas(timeDisplayContext2D, timeDisplayCanvas.width, timeDisplayCanvas.height); 
+}, 1000); 
+} 
+function startRestCountDown() { 
+if (handle != null) { 
+clearInterval(handle); 
+} 
+countDownSeconds = document.getElementById("restIntervalInput").value * 60; 
+timeDisplayCanvas = document.getElementById("countdownCanvas"); 
+timeDisplayContext2D = timeDisplayCanvas.getContext("2d"); 
+updateCanvas(timeDisplayContext2D, timeDisplayCanvas.width, timeDisplayCanvas.height); 
+handle = setInterval(function() { 
+updateCanvas(timeDisplayContext2D, timeDisplayCanvas.width, timeDisplayCanvas.height); 
+}, 1000); 
+} 
+</script> 
+</head> 
+<body onload="onLoadWindow()"> 
+<div align="center"> 
+<header> 
+<h1>工作寿命平衡计时器</h1> 
+</header> 
+请选择工作间隔：
+<input name="workIntervalInput" id="workIntervalInput" type="number" value="25" min="15" max="45" step="5"/> 
+分钟
+请选择休息时间间隔：
+<input name="restIntervalInput" id="restIntervalInput" type="number" value="5" min="3" max="10" step="1"/> 
+分钟
+<canvas id="countdownCanvas" width="300" height="50" style="border:2px solid black"> 
+这是一张画布
+</canvas> 
+<button onclick="startWorkCountDown()"> 
+努力工作
+</button> 
+<button onclick="startRestCountDown()"> 
+休息一下
+</button> 
+<footer> 
+</footer> 
+</div> 
+</body> 
+</html> 

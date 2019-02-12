@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learning</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function Publisher(){
+            this.observers = [];
+            var state = "";
+            this.getState=function(){
+                return state;
+            }
+            this.setState=function(value){
+                state = value;
+                this.notice();
+            }
+
+        }
+        Publisher.prototype.addOb=function(observer){
+            var flag = false;
+            for (var i = this.observers.length - 1; i >= 0; i--) {
+                if(this.observers[i]===observer){
+                    flag=true;                
+                }
+            };
+            if(!flag){
+                this.observers.push(observer);
+            }
+            return this;
+        }
+        Publisher.prototype.removeOb=function(observer){
+            var observers = this.observers;
+            for (var i = 0; i < observers.length; i++) {
+                if(observers[i]===observer){
+                    observers.splice(i,1);
+                }
+            };
+            return this;
+        }
+        Publisher.prototype.notice=function(){
+            var observers = this.observers;
+            for (var i = 0; i < observers.length; i++) {
+                    observers[i].update(this.getState());
+            };
+        }
+        function Subscribe(){
+            this.update = function(data){
+                  console.log(data);
+            };
+        }
+        var oba = new Subscribe(),
+            obb = new Subscribe();
+        var pba = new Publisher();
+        pba.addOb(oba);
+        pba.addOb(obb);
+        oba.update = function(state){
+            console.log(state+"hello!");
+        }
+        obb.update = function(state){
+            console.log(state+"world!");
+        }
+        pba.setState("open "); 
+    </script>
+</body>
+</html>
