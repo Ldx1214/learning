@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+    <head> 
+        <meta charset=" utf-8"> 
+        <title>learning</title>
+    <style type="text/css">
+        #demo{
+          width:50px;
+          height:50px;
+          background:red;
+        }
+    </style>
+        <script type="text/javascript">
+        window.onload=function(){
+          var demo=document.getElementById("demo");
+          var range=document.getElementById("range");
+          range.onmousemove=function(){
+            demo.style.width=this.value+"px";
+          }
+        }
+        </script>
+    </head>
+        <body>
+        <div id="demo"></div>
+        <input type="range" step="1" max="500" min="10" value="50" id="range"/>
+    </body>
+</html>

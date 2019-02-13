@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<script>
+function butRemoveWeb_onclick(){
+    if(document.form1.theDay.options[2].text == "Wednesday"){
+        document.form1.theDay.options[2] = null;
+    }else{
+        alert("这里没有星期三！");
+    }
+    console.log(document.form1.theDay.selectedIndex);
+}
+function butAddWed_onclick(){
+    if(document.form1.theDay.options[2].text != "Wednesday"){
+        var indexCounter ;
+        var days = document.form1.theDay;
+        var lastoption = new Option();
+        days.options[6] = lastoption;
+        for(indexCounter = 6;indexCounter >2; indexCounter--){
+            days.options[indexCounter].text = days.options[indexCounter -1].text;
+            days.options[indexCounter].value = days.options[indexCounter -1].value;
+        }
+        var option = new Option("Wednesday",2);
+        days.options[2] = option;
+    }
+    else{
+        alert("你想要两个星期三吗？");
+    }
+    console.log(document.form1.theDay.selectedIndex);
+}
+</script>
+</head>
+<body>
+<form name="form1">
+    <select name=theDay size=5>
+        <option value=0 selected>Monday
+        <option value=1>Tuesday
+        <option value=2>Wednesday
+        <option value=3>Thursday
+        <option value=4>Friday
+        <option value=5>Saturday
+        <option value=6>Sunday
+    </select>
+    <br>
+    <input type="button" value="移除星期三" name=butRemoveWeb onclick="butRemoveWeb_onclick()">
+    <input type="button" value="添加星期三" name=butAddWeb onclick="butAddWed_onclick()">
+</form>
+</body>
+</html>

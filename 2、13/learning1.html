@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>learning</title>
+<head>
+    <meta charset="UTF-8">
+    <title>learning</title>
+    <script>
+        var factorial = (
+        function f(num) {
+          if (num <= 1) {
+            return 1;
+              } else {
+                return num * f(num - 1);
+              }
+            }
+        );
+        var anotherFactorial = factorial;
+        factorial = null;
+        console.log(anotherFactorial(4));
+    </script>
+</head>
+<body>
+</body>
+</html>
