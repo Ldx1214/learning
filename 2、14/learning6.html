@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>蚂蚁部落</title>
+<script>
+window.onload=function(){
+  var odiv=document.getElementById("show");
+  var obt=document.getElementById("bt");
+  var num=0;
+  var timer=null;
+  function count(){
+        num=num+1;
+    odiv.innerHTML=num;
+  }
+  timer=setInterval(count,1000);
+  obt.onclick=function(){
+    clearInterval(timer);
+  }
+}
+</script>
+</head>
+<body>
+<div id="show"></div>
+<input type="button" id="bt" value="停止计时"/>
+</body>
+</html>

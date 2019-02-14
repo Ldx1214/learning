@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learning</title>
+    <style>
+        .btns {
+            width: 500px;
+            height: 50px;
+        }
+
+        .btns input {
+            width: 100px;
+            height: 50px;
+            background: #ddd;
+            color: #666;
+            border: 0;
+        }
+
+        .btns input.cur {
+            background: gold;
+        }
+
+        .contents div {
+            width: 500px;
+            height: 300px;
+            background: gold;
+            display: none;
+            line-height: 300px;
+            text-align: center;
+        }
+
+        .contents div.active {
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var aBtn = document.getElementById('btns').getElementsByTagName('input');
+            var aDiv = document.getElementById('contents').getElementsByTagName('div');
+            for (var i = 0; i < aBtn.length; i++) {
+                (function (i) {
+                    aBtn[i].onclick = function () {
+                        for (var j = 0; j < aBtn.length; j++) {
+                            aBtn[j].className = '';
+                            aDiv[j].className = '';
+                        }
+                        this.className = 'cur';
+                        aDiv[i].className = 'active'
+                    }
+                })(i);
+
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="btns" id="btns">
+    <input type="button" value="Tab01" class="cur">
+    <input type="button" value="Tab02">
+    <input type="button" value="Tab03">
+</div>
+<div class="contents" id="contents">
+    <div class="active">Tab内容一</div>
+    <div>Tab内容二</div>
+    <div>Tab内容三</div>
+</div>
+</body>
+</html>
