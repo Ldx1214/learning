@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css">
+#mydiv{
+  width:200px;
+  height:200px;
+  background-color:#639;
+  margin:0px auto;
+}
+#zuobiao{
+  width:150px;
+  margin:0px auto;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+  var mydiv=document.getElementById("mydiv");
+  var zuobiao=document.getElementById("zuobiao");
+   
+  mydiv.onmousemove=function(ev){
+    var ev=window.event||ev;
+    zuobiao.innerHTML="X:"+ev.offsetX+" Y:"+ev.offsetY+"";
+  }
+}
+</script>
+</head>
+<body>
+<div id="mydiv"></div>
+<div id="zuobiao"></div>
+</body>
+</html>

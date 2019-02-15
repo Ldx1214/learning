@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script>
+window.onload=function(){
+  let olink=document.getElementById("link");
+  olink.onclick=function(){
+    if(confirm("是否删除?")){
+      alert("文件被删除");
+    }
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+<a href="#" id="link">是否删除</a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script type="text/javascript">
+window.onload=function(){
+  var a=parseInt('0'); 
+  var sel=document.getElementById('sel');
+  sel.selectedIndex=2-a;
+  var lastUnit=document.getElementById('sel').value;
+  var input=document.getElementById("input0");
+  
+  var fRate={
+    公顷:{亩:15,平方米:10000},
+      亩:{平方米:10000/15,公顷:1/15},
+   平方米:{亩:15 / 10000,公顷:1 / 10000}
+  };
+  function selectChange(obj){
+    var v=parseFloat(input.value);
+    var rst=(v * fRate[lastUnit][sel.value]).toFixed(4);
+    input.value=rst;
+    lastUnit=sel.value;
+  }
+  sel.onchange=function(){
+    selectChange(this)
+  }
+}
+</script>
+</head>
+<body>
+<select id="sel">
+  <option value="公顷">公顷</option>
+  <option value="亩">亩</option>
+  <option value="平方米">平方米</option>
+</select>
+<input type="text" value="3" id="input0"/>
+</body>
+</html>

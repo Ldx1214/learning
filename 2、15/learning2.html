@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script> 
+window.onload=function(){
+  let obt=document.querySelector("#bt");
+  let odiv=document.querySelector("#show");
+  let count=0;
+  function func(){
+    odiv.innerHTML=++count;
+  }
+  obt.addEventListener("click",func,false);
+}
+</script> 
+</head> 
+<body> 
+<input type="button" id="bt" value="查看演示"/>
+<div id="show"></div>
+</body> 
+</html>

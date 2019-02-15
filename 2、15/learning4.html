@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script type="text/javascript"> 
+window.onload=function(){
+  var obox=document.getElementById("box");
+  var lis=obox.getElementsByTagName("li");
+  for(var i=0;i<lis.length;i++){ 
+    lis[i].index=i;
+    lis[i].onclick = function () { alert(this.index) }
+  } 
+}
+</script>
+</head>
+<body>
+<ul id="box">
+  <li>李东旭</li>
+  <li>李发山</li>
+  <li>张字芳</li>
+  <li>李雨桐</li>
+</ul>
+</body>
+</html>

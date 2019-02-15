@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script>
+function addItem() {
+  var ol = document.getElementById("antzone");
+  var newLi = document.createElement("li");
+  var textNode = document.createTextNode("李东旭");
+  newLi.appendChild(textNode);
+  ol.appendChild(newLi);
+}
+window.onload=function(){
+  var obt=document.getElementById("bt");
+  obt.onclick=function(){
+    addItem()
+  }
+}
+</script>
+</head>
+<body>
+<ol id="antzone"></ol>
+<input id="bt" type="button" value="添加"/>
+</body>
+</html>
