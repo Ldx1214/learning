@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css">
+#myDiv{
+  width:200px;
+  height:200px;
+}
+</style>
+<script type="text/javascript">
+function getcl(){
+  var arr = []
+  var i =0;
+  var C = '0123456789ABCDEF';
+  while(i++ < 6){
+    x=Math.random()*16;
+    b=parseInt(x);
+    c=C.substr(b,1);
+    arr.push(c);
+  }
+  var cl = "#"+ arr.join('');
+  return cl;
+}
+function setColor(){
+  document.getElementById("myDiv").style.backgroundColor = getcl();
+} 
+window.onload=function(){
+  var obt=document.getElementById("bt");
+  obt.onclick=function(){
+    setColor();
+  }
+}
+</script>
+</head>
+<body>
+<div id="myDiv"></div>
+<input type="button" value="变幻颜色" id="bt"/>
+</body>
+</html>

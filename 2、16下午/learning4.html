@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=" utf-8">
+<title>learning</title>
+<script type="text/javascript"> 
+window.onload=function(){
+  var oshow=document.getElementById("show");
+  var obox=document.getElementById("box");
+  var obt=document.getElementById("bt");
+  obt.onclick=function(){
+    var arr=[];
+    var cks=obox.getElementsByTagName("input");
+    for(var index=0;index<cks.length;index++){
+      if(cks[index].checked==true){
+        arr.push(cks[index].value);
+      }
+    }
+    oshow.innerHTML=arr.toString();
+  }
+}
+</script>
+</head>
+<body>
+<div id="show"></div>
+<div id="box">
+  <input type="checkbox" value="1"/>
+  <input type="checkbox" value="2"/>
+  <input type="checkbox" value="3"/>
+  <input type="checkbox" value="4"/>
+  <input type="checkbox" value="5"/>
+  <input type="checkbox" value="6"/>
+</div>
+<input type="button" id="bt" value="查看效果"/>
+</body>
+</html>

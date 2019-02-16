@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css">
+* {
+  margin: 0px auto;
+  padding: 0px;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+  width: 150px;
+}
+li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+.leftSidebar {
+  margin: 0px auto;
+  width: 500px;
+}
+.lmName {
+  display: block;
+  width: 150px;
+  background: #f9f9f9;
+  height: 30px;
+  border: 1px solid #e5e5e5;
+  padding-left: 15px;
+  line-height: 30px;
+}
+.ejlmUl {
+  display: none;
+  width: 165px;
+  border: 1px solid #e5e5e5;
+}
+.ejlmUl li {
+  border-bottom: 1px dashed #e5e5e5;
+  padding-left: 15px;
+  font-size: 12px;
+  line-height: 24px;
+}
+.action {
+  display: block;
+}
+</style>
+<script type="text/javascript">
+function left(){
+  var lmName = document.getElementsByClassName('lmName');
+  for (var index = 0; index < lmName.length; index++) {
+    lmName[index].index = index;
+    lmName[index].onclick = function () {
+      allNone();
+      var ejlmUl = document.getElementsByClassName('ejlmUl');
+      ejlmUl[this.index].style.display = 'block';
+    }
+  }
+}
+function allNone(){
+  var ejlmUl = document.getElementsByClassName('ejlmUl');
+  for (var index = 0; index < ejlmUl.length; index++) {
+    ejlmUl[index].style.display = 'none';
+  }
+}         
+window.onload = function () {
+  left();
+}
+</script>
+</head>
+<body>
+  <div class="leftSidebar">
+    <ul id="leftUl">
+      <li>
+        <a class="lmName">李东旭</a>
+        <ul class="ejlmUl action">
+          <li class="ejlm">栏目11</li>
+          <li class="ejlm">栏目11</li>
+          <li class="ejlm">栏目11</li>
+          <li class="ejlm">栏目11</li>
+        </ul>
+      </li>
+      <li>
+        <a class="lmName">李发山</a>
+        <ul class="ejlmUl">
+          <li class="ejlm">栏目22</li>
+          <li class="ejlm">栏目22</li>
+          <li class="ejlm">栏目22</li>
+          <li class="ejlm">栏目22</li>
+        </ul>
+      </li>
+      <li>
+        <a class="lmName">张字芳</a>
+        <ul class="ejlmUl">
+          <li class="ejlm">栏目33</li>
+          <li class="ejlm">栏目33</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
