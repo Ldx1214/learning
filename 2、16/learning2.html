@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+		var countArr = [1, 2, 3,4,5,6,2,4];
+		function unique(arr) {
+		  var resultArr = [],
+		      hash = {};
+		  for (var index = 0, elem;(elem = arr[index]) != null; index++) {
+		    if (!hash[elem]) {
+		      resultArr.push(elem);
+		      hash[elem] = true;
+		    };
+		  };
+		  return resultArr;
+		}
+		console.log(unique(countArr))
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+		function strLength(str){ 
+	    var realLength=0, 
+	    len=str.length,
+	    charCode=-1; 
+	    for(var i=0;i<len;i++){ 
+	      charCode=str.charCodeAt(i); 
+	      if(charCode>=0&&charCode<=128){ 
+	        realLength += 1; 
+	　   } 
+	      else{ 
+	        realLength+=2; 
+	      } 
+	    } 
+	    return realLength; 
+	   }
+	var str="努力学习，每天坚持锻炼看书写代码";
+	console.log(strLength(str));
+	</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css">
+.beijing {
+  height: 185px;
+  width: 400px;
+  background-color: #c01319;
+}
+.zi {
+  text-align: center;
+}
+.zi span {
+  margin-top: 50px;
+  font-size: 24px;
+  font-family: "微软雅黑";
+  color: #c01319;
+  font-weight: bold;
+  padding: 20px 0;
+  width: 300px;
+  background-color: yellow;
+  display: inline-block;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+#canvas {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+</style>
+<script type="text/javascript">
+window.onload = function() {
+  var Zi = document.getElementById("Zi")
+  var oCanvas = document.getElementById("canvas")
+  var context = oCanvas.getContext("2d")
+  context.save();
+  context.beginPath();
+  context.fillStyle = "transparent";
+  context.fillRect(0, 0, 400, 185);
+  context.fill();
+  context.closePath();
+  context.restore();
+  context.save()
+  context.beginPath()
+  context.fillStyle = "#c0c0c0"
+  context.fillRect(50, 50, 300, 71)
+  context.fill()
+  context.closePath()
+  context.restore()
+  function shua() {
+    document.onmousemove = function() {
+      context.globalCompositeOperation = "destination-out"
+      var X = event.clientX
+      var Y = event.clientY
+      context.save()
+      context.beginPath()
+      context.arc(X, Y, 25, 0, 2 * Math.PI, true)
+      context.fill()
+      context.closePath()
+      context.restore()
+    }
+  }
+  shua()
+  huanzi()
+  
+  function huanzi() {
+    var m = ""
+    var n = Math.random()
+    x = n.toFixed(1)
+    console.log(x);
+    if (x == 0.0 || x == 0.1) {
+      m += "一等奖：100块"
+    } else if (x > 0.1 && x < 0.4) {
+      m += "二等奖：10块"
+    } else if (x > 0.4 && x < 0.8) {
+      m += "三等奖：5块"
+    } else if (x == 1.0) {
+      m += "特等奖：我 >_<！"
+    } else {
+      m += "没有抽中继续努力！"
+    }
+    Zi.innerText = m
+  }
+}
+</script>
+</head>
+<body>
+<div class="beijing">
+  <div class="zi">
+    <span id="Zi"></span>
+  </div>
+</div>
+<canvas id="canvas" width="400" height="185"></canvas>
+</body>
+</html>

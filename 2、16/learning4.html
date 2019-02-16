@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning点击表格</title>
+<script type="text/javascript">
+function IniEvent() {
+  var tbl = document.getElementById("tblMain");
+  var trs = tbl.getElementsByTagName("tr");
+  for (var index=0;index<trs.length;index++){
+    trs[index].onclick=TrOnClick;
+  }
+}
+function TrOnClick(){
+  var tbl=document.getElementById("tblMain");
+  var trs=tbl.getElementsByTagName("tr");
+  for (var index=0;index<trs.length;index++){
+    if(trs[index]==this){
+      trs[index].style.background="yellow";
+    }
+    else{
+      trs[index].style.background="white";
+    }
+  }
+}
+window.onload=function(){
+  IniEvent();
+}
+</script>
+</head>
+<body>
+<p>请点击表格</p>
+<table id="tblMain" border="1">
+<tr>
+  <td>1</td>
+  <td>李东旭</td>
+  <td>css教程</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>李发山</td>
+  <td>div教程</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>张字玲</td>
+  <td>jquery教程</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>李雨桐</td>
+  <td>JAVA教程</td>
+</tr>
+</table>
+</body>
+</html>
