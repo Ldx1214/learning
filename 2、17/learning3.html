@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style>
+#box {
+  width: 280px;
+  border: #999 1px solid;
+  padding: 10px;
+}
+p {
+  line-height: 24px;
+}
+a {
+  color: #096;
+  cursor: pointer;
+}
+</style>
+<script>
+window.onload = function () {
+  textShow(box, 30)
+}
+function textShow(obj, num) {
+  var oSpan = obj.getElementsByTagName("span")[0];
+  var oA = obj.getElementsByTagName("a")[0];
+  var str = oSpan.innerHTML;
+  var onOff = true;
+  
+  oSpan.innerHTML = str.substring(0, num);
+  oA.onclick = function () {
+    if (onOff) {
+      oSpan.innerHTML = str;
+      oA.innerHTML = "收起";
+    } else {
+      oSpan.innerHTML = str.substring(0, num);
+      oA.innerHTML = "...展开";
+    }
+    onOff = !onOff;
+  }
+}
+</script>
+</head>
+<body>
+<div id="box">
+  <p>
+    <span>每天都要努力学习，多写一些代码，让自己每天进步多一点，这样就能早一点参加工作。早点回北京去拼搏。</span>
+    <a>展开..</a>
+  </p>
+</div>
+</body>
+</html>

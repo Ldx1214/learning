@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script>
+window.onload = function () {
+  var oTab = document.getElementById('antzone');
+  var data = [
+    { id: 1, username: '李东旭', sex: '男' },
+    { id: 2, username: '李发山', sex: '女' },
+    { id: 3, username: '张字芳', sex: '男' },
+    { id: 4, username: '李雨彤', sex: '男' },
+  ];
+  
+  var oTbody = oTab.tBodies[0];
+  for (var index = 0; index < data.length; index++) {
+    var oTr = document.createElement('tr');
+    oTbody.appendChild(oTr);
+  
+    var oTd = document.createElement('td');
+    oTd.innerHTML = data[index].id;
+    oTr.appendChild(oTd);
+  
+    oTd = document.createElement('td');
+    oTd.innerHTML = data[index].username;
+    oTr.appendChild(oTd);
+  
+    oTd = document.createElement('td');
+    oTd.innerHTML = data[index].sex;
+    oTr.appendChild(oTd);
+  
+    oTd = document.createElement('td');
+    oTr.appendChild(oTd);
+  
+    var oA = document.createElement('a');
+    oA.innerHTML = "删除";
+    oA.href = "javascript:;";
+    oTd.appendChild(oA);
+    oA.onclick = function () {
+      oTbody.removeChild(this.parentNode.parentNode);
+    }
+  }
+}
+</script>
+</head>
+<body>
+<table id="antzone" border="1" width="100%">
+  <thead>
+    <tr>
+      <td>编号</td>
+      <td>姓名</td>
+      <td>性别</td>
+      <td>操作</td>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+</body>
+</html>

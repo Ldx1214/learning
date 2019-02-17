@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+</head>
+<body>
+<script type="text/javascript">
+var n = 0;
+function showTable(len) {
+  wi('<table border="1" width="300" style="border-collapse:collapse"><tbody id="table">');
+  for (i = 0; i < len; i++) {
+    if (parseInt(i % 2) == 1) {
+      bg = '#F4FAC7';
+    } else {
+      bg = 'white';
+    }
+    wi('<tr bgcolor=' + bg + '><td>第' + (i + 1) + '行</td></tr>');
+  }
+  wi('</tbody></table><br />');
+  wi('<input type="button" value="添加一行" id="add" />');
+}
+ 
+function wi(str) {
+  return document.write(str);
+}
+showTable(10);
+var add = document.getElementById("add");
+add.onclick = function() {
+  n = n + 1;
+  if (n % 2 == 0) {
+    bg = '#F4FAC7';
+  } else {
+    bg = 'white';
+  }
+  var table = document.getElementById("table");
+  var tr = document.createElement("tr");
+  tr.bgColor = bg;
+  var td = document.createElement("td");
+  td.innerHTML = '第' + (10 + n) + '行';
+  tr.appendChild(td);
+  table.appendChild(tr);
+}
+</script>
+</body>
+</html>
