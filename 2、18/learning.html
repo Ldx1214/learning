@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+}
+#content {
+  overflow: hidden;
+}
+#all-page {
+  transition: 1s;
+}
+#page-one {
+  background-color: red;
+}
+#page-two {
+  background-color: blue;
+}
+#page-three {
+  background-color: green;
+}
+</style>
+</head>
+<body>
+<div id='content'>
+  <div id="all-page">
+    <div id="page-one">
+      <button class='toUp' index="0">点击向上</button>
+    </div>
+    <div id="page-two">
+      <button class='toDown' index="0">点击向下</button>
+      <button class='toUp' index="1">点击向上</button>
+    </div>
+    <div id="page-three">
+      <button class='toDown' index="1">点击向下</button>
+    </div>
+  </div>
+</div>
+<script>
+var tHeight = document.documentElement.clientHeight;
+var content = document.getElementById("content");
+var allPage = document.getElementById("all-page");
+var pageOne = document.getElementById("page-one");
+var pageTwo = document.getElementById("page-two");
+var pageThree = document.getElementById("page-three");
+content.style.height = tHeight + "px";
+pageOne.style.height = tHeight + "px";
+pageTwo.style.height = tHeight + "px";
+pageThree.style.height = tHeight + "px";
+  
+function swiperUp(button, distance) {
+  var swiperBotton = allPage.querySelectorAll(button)
+  for (var i = 0; i < swiperBotton.length; i++) {
+    swiperBotton[i].onclick = function() {
+      var x = parseFloat(this.getAttribute("index"))
+      allPage.style.transform = "translate3d(0px," + -distance * (x + 1) + "px,0px)"
+    }
+  }
+  
+}
+  
+function swiperDown(button, distance) {
+  var swiperBotton = allPage.querySelectorAll(button)
+  for (var i = 0; i < swiperBotton.length; i++) {
+    swiperBotton[i].onclick = function() {
+      var x = parseFloat(this.getAttribute("index"))
+      allPage.style.transform = "translate3d(0px," + -distance * x + "px,0px)"
+    }
+  }
+}
+swiperUp(".toUp", tHeight)
+swiperDown(".toDown", tHeight)
+</script>
+</body>
+</html>

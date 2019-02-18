@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css">
+h1 {
+  float: left;
+  margin: 0;
+}
+h2 {
+  height: 45px;
+}
+#div1 {
+  width: 120px;
+  height: 50px;
+  background-color: red;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+  margin: 0px 0 0 400px;
+}
+#jump {
+  position: fixed;
+  margin: 100px 0 0 600px;
+  padding: 20px;
+  background-color: #fefefe;
+  width: 400px;
+  height: 260px;
+  border: 30px solid #8e8e8e;
+  display: none;
+  z-index: 40;
+}
+.bg {
+  width: 50px;
+  height: 50px;
+  background-color: #e1e1e3;
+  border: 1px solid #c6c6c6;
+  text-align: center;
+  line-height: 50px;
+  float: left;
+  margin: 0 0 10px 3px;
+  position: relative;
+}
+ul {
+  list-style: none;
+}
+#submit, #reset {
+  float: left;
+  margin-left: 20px;
+  width: 70px;
+  height: 40px;
+  border: 1px solid;
+  text-align: center;
+  line-height: 40px;
+  background-color: #03275b;
+  color: #fefefe;
+}
+#sub {
+  position: absolute;
+  margin: 0 0 0 95px;
+}
+.selects {
+  float: right;
+  margin-right: 20px;
+}
+#select0 {
+  background-color: #bf2424;
+  color: #fefefe;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #c6c6c6;
+  text-align: center;
+  line-height: 50px;
+  float: left;
+  margin: 0 0 10px 3px;
+  position: relative;
+}
+#select1 {
+  background-color: #fbbf00;
+  color: #fefefe;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #c6c6c6;
+  text-align: center;
+  line-height: 50px;
+  float: left;
+  margin: 0 0 10px 3px;
+  position: relative;
+}
+#select2 {
+  background-color: #588cfa;
+  color: #fefefe;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #c6c6c6;
+  text-align: center;
+  line-height: 50px;
+  float: left;
+  margin: 0 0 10px 3px;
+  position: relative;
+}
+#selectTog0, #selectTog1, #selectTog2 {
+  background-color: #605e5e;
+  color: #fefefe;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #0d0d0d;
+  text-align: center;
+  line-height: 50px;
+  float: left;
+  margin: 0 0 10px 3px;
+  position: relative;
+}
+.title {
+  margin-left: 20px;
+}
+#transform {
+  border: 5px dashed #000000;
+  height: 300px;
+  width: 300px;
+  background-color: #fefefe;
+  float: left;
+  margin-top: 20px;
+}
+.bgToggle {
+  width: 50px;
+  height: 50px;
+  background-color: #605e5e;
+  border: 1px solid #0d0d0d;
+  text-align: center;
+  line-height: 50px;
+  float: left;
+  margin: 0 0 10px 3px;
+  position: relative;
+}
+</style>
+<script type="text/javascript">
+window.onload = function() {
+  var oDiv1 = document.getElementById('div1');
+  var oDiv2 = document.getElementById('jump');
+  var res = document.getElementById('reset');
+  var sub = document.getElementById('submit');
+  var trans2 = document.getElementById('transform');
+  
+  res.onclick = function() {
+    trans2.style.border = "5px dashed #000000";
+    trans2.style.height = "300px";
+    trans2.style.width = "300px";
+    trans2.style.backgroundColor = "#fefefe";
+    trans2.style.float = "left";
+    trans2.style.marginTop = "20px";
+  }
+  
+  sub.onclick = function() {
+    oDiv2.style.display = "none";
+  }
+  
+  oDiv1.onclick = function() {
+    oDiv2.style.display = 'block';
+    newLi();
+  }
+}
+  
+function newLi() {
+  for (var i = 0; i < 9; i++) {
+    setLi(i);
+  }
+}
+  
+function setLi(thisLi) {
+  var currLi = "select" + thisLi;
+  document.getElementById(currLi).onmouseover = toggleColor;
+  document.getElementById(currLi).onmouseout = changed;
+  document.getElementById(currLi).onclick = select;
+}
+  
+function toggleColor(evt) {
+  if (evt) {
+    var thisLi = evt.target;
+  } else {
+    var thisLi = window.event.srcElement;
+  }
+  if (thisLi.className == "bg") {
+    thisLi.className = "bgToggle";
+  } else if (thisLi.id == "select0") {
+    thisLi.id = "selectTog0";
+  } else if (thisLi.id == "select1") {
+    thisLi.id = "selectTog1";
+  } else if (thisLi.id == "select2") {
+    thisLi.id = "selectTog2";
+  } else {
+    thisLi.className = "bgToggle";
+  }
+}
+  
+function changed(evt) {
+  if (evt) {
+    var thisLi = evt.target;
+  } else {
+    var thisLi = window.event.srcElement;
+  }
+  
+  if (thisLi.id == "selectTog0") {
+    thisLi.id = "select0";
+  } else if (thisLi.id == "selectTog1") {
+    thisLi.id = "select1";
+  } else if (thisLi.id == "selectTog2") {
+    thisLi.id = "select2";
+  } else {
+    thisLi.className = "bg";
+  }
+}
+  
+function select(evt) {
+  if (evt) {
+    var thisLi = evt.target;
+  } else {
+    var thisLi = window.event.srcElement;
+  }
+  var trans = document.getElementById('transform');
+  
+  if (thisLi.parentNode.id == "ul2") {
+    trans.style.width = thisLi.value;
+  }
+  if (thisLi.parentNode.id == "ul3") {
+    trans.style.height = thisLi.value;
+  }
+  if (thisLi.id == "selectTog0") {
+    trans.style.backgroundColor = "#bf2424";
+  }
+  if (thisLi.id == "selectTog1") {
+  
+    trans.style.backgroundColor = "#fbbf00";
+  }
+  if (thisLi.id == "selectTog2") {
+    trans.style.backgroundColor = "#588cfa";
+  }
+}
+</script>
+</head>
+<body>
+  <h1>请为下面的DIV设置样式：</h1>
+  <div id="div1" tltle="点击设置">点击设置</div>
+  <div id="transform"></div>
+  <div id="jump">
+    <div class="selects">
+      <ul id="ul1">
+        <li id="select0">红</li>
+        <li id="select1">黄</li>
+        <li id="select2">蓝</li>
+      </ul>
+    </div>
+    <div class="title">
+      <h2 id="h5-1">选择背景颜色：</h2>
+    </div>
+    <div id="sub">
+      <div id="reset" title="重置">重置</div>
+      <div id="submit" title="确定">确定</div>
+    </div>
+  </div>
+</body>
+</html>

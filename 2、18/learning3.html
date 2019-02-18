@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style>
+#box {
+  margin: 100px auto;
+  width: 200px;
+  height: 150px;
+  line-height: 150px;
+  letter-spacing: 10px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  border: 2px solid palegreen;
+  word-wrap: break-word;
+  border-radius: 5px;
+  position: relative;
+}
+#btn {
+  position: absolute;
+  left: 50%;
+  top: 280px;
+}
+</style>
+<script>
+window.onload=function(){
+  var box=document.getElementById("box");
+  var span=document.getElementsByTagName("span");
+  var btn=document.getElementById("btn");
+  var color="";
+  var str="0123456789abcdef";
+  btn.onclick=function(){
+    for (var index = 0; index < span.length; index++) {
+      for(var j=0;j<6;j++){
+        color+=str.substr(parseInt(Math.random()*str.length),1);
+      }
+      span[index].innerHTML = parseInt(Math.random() * 10);
+      span[index].style.color = ("#" + color);
+      color="";
+    }
+  }
+}
+</script>
+</head>
+<body>
+  <div id="box">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+  </div>
+  <input type="button" id="btn" value="变换数字" />
+</body>
+</html>

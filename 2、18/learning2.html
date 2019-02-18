@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script>
+window.onload = function(){
+  var oP = document.getElementById('p1');
+  var oBnt1 = document.getElementById('btn1');
+  var oBnt2 = document.getElementById('btn2');
+  var num = 15
+  oBnt1.onclick = function(){
+    num++
+    oP.style.fontSize = num + 'px';
+  }
+  oBnt2.onclick = function(){
+    num--
+    oP.style.fontSize = num + 'px';
+  }
+};
+</script>
+</head>
+<body>
+  <p id="p1">努力才能有好的未来</p>
+  <input id="btn1" type="button" value="+" />
+  <input id="btn2" type="button" value="-" />
+</body>
+</html>

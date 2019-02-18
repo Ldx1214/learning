@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+.box {
+  width: 280px;
+  margin: 50px auto;
+  font-family: microsoft yahei;
+  font-size: 14px;
+}
+.text-input {
+  position: relative;
+}
+.text-input .search {
+  border: 1px solid #d9d9d9;
+  width: 95%;
+  line-height: 28px;
+  cursor: pointer;
+  font-style: normal;
+  display: inline-block;
+  height: 28px;
+  color: #909090;
+  padding-left: 5%;
+}
+.text-input .search:hover {
+  border: 1px solid #19ac9e;
+}
+.text-input i {
+  position: absolute;
+  top: 6px;
+  right: 3px;
+}
+.text-input i.down {
+  display: block;
+  width: 17px;
+  height: 16px;
+}
+.text-input i.up {
+  display: block;
+  width: 17px;
+  height: 16px;
+}
+.text-input .search b {
+  font-weight: normal;
+}
+.search-text-hide {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 0 4px rgba(0,0,0,.17);
+  border-radius: 3px;
+  box-sizing: border-box;
+  z-index: 1070;
+  outline: none;
+  overflow: hidden;
+  font-size: 12px;
+  display: none;
+}
+.hide-input {
+  padding: 6px;
+  display: block;
+}
+.hide-input input {
+  border: 1px solid #d9d9d9;
+  width: 100%;
+  height: 24px !important;
+  padding: 4px 7px;
+  box-sizing: border-box;
+  border-radius: 4px !important;
+  outline: none;
+}
+.no-list-warn {
+  color: #ccc;
+  padding: 4px 4px 4px 16px;
+}
+.search-text-hide ul {
+  outline: none;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  max-height: 200px;
+  overflow: auto;
+}
+.search-text-hide ul li {
+  position: relative;
+  display: block;
+  padding: 4px 33px 4px 16px;
+  font-weight: 400;
+  color: #666;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+}
+.search-text-hide ul li:hover, .search-text-hide ul li.active {
+  background: #e8f7f5;
+}
+.no-list-warn {
+  display: none;
+}
+</style>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script>
+$(function() {
+  var arr = ['div教程', 'css教程', 'js教程', 'json教程', 'softwhy.com'];
+  
+  $(".search").on('click', function (e) {
+    e.stopPropagation();
+    if ($(this).find("i").hasClass('down')) {
+      $(".search-text-hide").css("display", "block");
+      $(this).find("i").addClass('up').removeClass('down');
+      var tInput = $(".search-text-hide").find("input");
+      tInput.focus();
+      tInput.val("");
+      var sibLi = $(".search-text-hide .temList li");
+      var _this = $(this);
+      $("body").on('click', sibLi, function(event) {
+        event.preventDefault();
+        if (event.target.tagName == "LI") {
+          $(".search").find("i").attr("data-text", $(event.target).attr("data-text"));
+          $(".search").find("b").text($(event.target).text());
+          $(".search-text-hide").hide();
+          _this.find("i").addClass('down').removeClass('up');
+        }
+      });
+    } else {
+      $(".search-text-hide").css("display", "none");
+      $(this).find("i").addClass('down').removeClass('up');
+    }
+  
+    var ul_html = '';
+    for (var i = 0; i < arr.length; i++) {
+      ul_html += '<li data-text="' + arr[i] + '">' + arr[i] + '</li>';
+    }
+    $(".temList").html(ul_html);
+  });
+  //input
+  $(".search-text-hide input[type='text']").on("keyup", function(e) {
+    if (e.which != 38 && e.which != 40 && e.which != 13) {
+      var liList = $(".temList li");
+      var text = $.trim($(this).val());
+      var _html = '';
+      $.each(arr, function(index, val) {
+        if (val.indexOf(text) != -1) {
+          _html += '<li data-text="' + index + '">' + arr[index] + '</li>';
+        }
+      });
+      if (_html == '') {
+        $('.search-text-hide span.no-list-warn').show();
+        $(".search-text-hide ul").html('');
+      } else {
+        $('.search-text-hide span.no-list-warn').hide();
+        $(".search-text-hide ul").empty().html(_html);
+      }
+    }
+  });
+  $(document).keydown(function(e) {
+    var activeLi = $('.search-text-hide ul li.active');
+    var firstLi = $('.search-text-hide ul li:first');
+    var lastLi = $('.search-text-hide ul li:last');
+  
+    if (e.which == 38 || e.which == 40) {
+      if (activeLi.length == 0) {
+        firstLi.addClass('active');
+      } else if (e.which == 38) { 
+        if (activeLi.index() == 0) { 
+          lastLi.addClass('active').siblings().removeClass('active'); 
+        } else {
+          activeLi.removeClass('active').prev().addClass('active');
+        }
+      } else if (e.which == 40) {
+        if (activeLi.index() == $('.search-text-hide ul li').length - 1) { 
+          firstLi.addClass('active').siblings().removeClass('active');
+        } else {
+          activeLi.removeClass('active').next().addClass('active');
+        }
+      }
+    } else if (e.which == 13) {
+      $(".text-input em i").attr("data-text", activeLi.attr("data-text"));
+      $(".text-input em b").text(activeLi.text());
+      $(".search-text-hide").hide();
+      $(".text-input em").find('i').addClass('down').removeClass('up');
+    }
+  });
+});
+</script>
+</head>
+<body>
+  <div class="box">
+    <div class="text-input">
+      <em class="search">
+        <b>搜索</b>
+        <i class="down"></i>
+      </em>
+      <div class="search-text-hide" data-index="0">
+        <span class="hide-input">
+          <input type="text" class="nav-search-input searchTagsModal" value="">
+        </span>
+        <span class="no-list-warn">没有指定内容</span>
+        <ul class="temList"></ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
