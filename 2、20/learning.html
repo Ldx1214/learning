@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script>
+var lie = 0;
+var hang = 0;
+function makeTabble() {
+  var lie = 0;
+  var hang = 0;
+  
+  hang = document.getElementById('inputOne').value;
+  lie = document.getElementById('inputTwo').value;
+  document.getElementById('inputOne').value = '';
+  document.getElementById('inputTwo').value = '';
+  var theTable = document.createElement("table");
+  theTable.style.border = "1px solid #8c8c8c"
+  for (i = 0; i < hang; i++) {
+    var hangEle = document.createElement("tr");
+    for (j = 0; j < lie; j++) {
+      var lieEle = document.createElement("td");
+      lieEle.style.width = "80px";
+      lieEle.style.height = "30px";
+      lieEle.style.border = "1px solid #8c8c8c"
+      hangEle.appendChild(lieEle);
+    }
+    theTable.appendChild(hangEle);
+  }
+  document.body.appendChild(theTable);
+}
+window.onload = function () {
+  var obt = document.getElementById("bt");
+  obt.onclick = function () {
+    makeTabble();
+  }
+}
+</script>
+</head>
+<body>
+<h1>生成表格</h1>
+行数：<input type="text" id="inputOne" /> 
+列数：<input type="text" id="inputTwo" /> 
+<input type="button" id="bt" value="查看效果"/>
+</body>
+</html>

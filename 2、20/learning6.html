@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style>
+#tb td{
+  background:#ccc;
+}
+</style>
+<script tyle="text/javascript">
+var oldTD = null;
+var oldColor = "#ccc";
+function SetColor(ev){
+  var ev = ev || window.event;
+  var obj = ev.srcElement||ev.target;
+  if (obj.tagName != "TD") return
+  obj.style.backgroundColor = "red";
+  if (oldTD) {
+    oldTD.style.backgroundColor = oldColor;
+  }
+  oldTD = obj;
+}
+window.onload = function(){
+  var table = document.getElementById("tb");
+  table.onclick = function (ev) {
+    var ev = ev || window.event;
+    SetColor(event)
+  }
+}
+</script>
+</head>
+<body>
+<p>点击表格</p>
+<table id="tb" width="500" border="1">
+  <tr>
+    <td width="93" height="29">李东旭</td>
+    <td width="93" height="29">李发山</td>
+    <td width="93" height="29">张字玲</td>
+  </tr>
+</table>
+</body>
+</html>

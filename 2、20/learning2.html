@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>蚂蚁部落</title>
+<style type="text/css">
+li {
+  height: 30px;
+  line-height: 30px;
+  background: #ccc;
+  list-style-type: none;
+  margin: 3px;
+}
+</style>
+<script type="text/javascript">
+window.onload = function() {
+  var oUl = document.getElementById('ul');
+  var oLi = oUl.getElementsByTagName('li');
+  var num = oLi.length;
+  
+  function addEvent(ele, type, fn) {
+    if (ele.addEventLisenter) {
+      ele.addEventLisenter(type, fn, false)
+    } else if (ele.attachEvent) {
+      ele.attachEvent("on" + type, fn)
+    } else {
+      ele["on" + type] = fn;
+    }
+  }
+  
+  function clickFn(event) {
+    var event = event || window.event;
+    var tar = event.target || event.srcElement;
+    for (var index = 0; index < oLi.length; index++) {
+      oLi[index].style.color = "";
+    }
+    if (tar.nodeName.toLowerCase() == "li") {
+      tar.style.color = 'red'
+    }
+  }
+  addEvent(oUl, 'click', clickFn);
+}
+</script>
+</head>
+<body>
+  <p>点击表格</p>
+  <ul id="ul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ul>
+</body>
+</html>

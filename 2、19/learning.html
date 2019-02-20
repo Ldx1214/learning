@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+  -moz-user-select: none;
+}
+body {
+  font-size: 16px;
+}
+ul {
+  margin: 5px 100px;
+  list-style: none;
+}
+li {
+  width: 193px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  float: left;
+  transition: all 0.1s ease-in-out;
+}
+li:hover {
+  background: #bdb76b;
+  cursor: move;
+}
+</style>
+</head>
+<body>
+<ul id="outer_wrap">
+  <li>李东旭1</li>
+  <li>李东旭2</li>
+  <li>李东旭3</li>
+  <li>李东旭4</li>
+  <li>李东旭5</li>
+  <li>李东旭6</li>
+</ul>
+<script type="text/javascript">
+var color = ["#FFF8DC", "##FFEFDB", "#FFE7BA", "#FFE1FF", "#FFD39B", "#FFBBFF", "#FFAEB9", "#FF8C69", "#FF8247"];
+var opacity = [0.5, 0.6, 0.7];
+  
+function $(id) {
+  return document.getElementById(id);
+}
+function getMousePos(e) {
+  return {
+    x: e.pageX || e.clientX + document.body.scrollLeft,
+    y: e.pageY || e.clientY + document.body.scrollTop
+  }
+}
+function getElementPos(el) {
+  return {
+    x: el.offsetParent ? el.offsetLeft + arguments.callee(el.offsetParent)['x'] : el.offsetLeft,
+    y: el.offsetParent ? el.offsetTop + arguments.callee(el.offsetParent)['y'] : el.offsetTop
+  }
+}
+function getElementSize(el) {
+  return {
+    width: el.offsetWidth,
+    height: el.offsetHeight
+  }
+}
+document.onselectstart = function() {
+    return false;
+  }
+var MOVE = {};
+MOVE.isMove = false;
+var div = document.createElement('div');
+div.style.width = "193px";
+div.style.height = '1px';
+div.style.fontSize = '0';
+div.style.background = 'red';
+div1 = div.cloneNode(true);
+div1.style.background = "blue";
+var outer_wrap = $('outer_wrap');
+outer_wrap.onmousedown = function(event) {
+  var lis = outer_wrap.getElementsByTagName('li');
+  for (var i = 0; i < lis.length; i++) {
+    lis[i].index = i;
+  }
+  for (var i = 0; i < lis.length; i++) {
+    lis[i]['pos'] = getElementPos(lis[i]);
+    lis[i]['size'] = getElementSize(lis[i]);
+    lis[i].style.background = color[i];
+    lis[i].style.opacity = opacity[i % 3];
+    lis[i].onmousedown = function() {
+      outer_wrap.insertBefore(div1, this);
+      div1.style.margin = "0 0 0 " + this.index * 193 + "px";
+      this.style.color = "red";
+    }
+  }
+  event = event || window.event;
+  var t = event.target || event.srcElement;
+  if (t.tagName.toLowerCase() == 'li') {
+    var p = getMousePos(event);
+    var el = t.cloneNode(true);
+    el.style.position = 'absolute';
+    el.style.left = t.pos.x + 'px';
+    el.style.top = t.pos.y + 'px';
+    el.style.width = t.size.width + 'px';
+    el.style.height = t.size.height + 'px';
+    el.style.border = '1px solid #d4d4d4';
+    el.style.background = '#d4d4d4';
+    el.style.opacity = '0.7';
+    document.body.appendChild(el);
+    document.onmousemove = function(event) {
+        event = event || window.event;
+        var current = getMousePos(event);
+        el.style.left = t.pos.x + current.x - p.x + 'px';
+        el.style.top = t.pos.y + current.y - p.y + 'px';
+        document.body.style.cursor = 'move';
+        for (var i = 0; i < lis.length; i++) {
+          if (current.x >= lis[i]['pos']['x'] && current.x <= lis[i]['pos']['x'] + lis[i]['size']['width']) {
+            if (t != lis[i] || current.x > i * 193) {
+              MOVE.isMove = true;
+              s = lis[i];
+              div.style.margin = "0 0 0 " + i * 193 + "px";
+              outer_wrap.insertBefore(div, lis[i]);
+            }
+  
+          }
+        }
+      }
+    document.onmouseup = function(event) {
+      event = event || window.event;
+      document.onmousemove = null;
+      if (MOVE.isMove) {
+        outer_wrap.replaceChild(t, div);
+        outer_wrap.replaceChild(s, div1);
+        MOVE.isMove = false;
+      }
+      document.body.removeChild(el);
+      el = null;
+      document.body.style.cursor = 'normal';
+      document.onmouseup = null;
+    }
+  }
+}
+</script>
+</body>
+</html>

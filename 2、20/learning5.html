@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style>
+ul li{
+  list-style:none;
+  margin:5px;
+}
+</style>
+<script>
+window.onload = function () {
+  var top = document.getElementById("top");
+  var bottom = document.getElementById("bottom");
+  top.onkeyup = function () {
+    bottom.value = top.value;
+  }
+}
+</script>
+</head>
+<body>
+<ul>
+  <li><input type="text" id="top"/></li>
+  <li><input type="text" id="bottom"/></li>
+</ul>
+</body>
+</html>

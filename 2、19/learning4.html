@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset=" utf-8"> 
+<head>
+<title>learning</title>
+<style type="text/css"> 
+.Div_Scroll 
+{ 
+  position:fixed; 
+  margin:-10px; 
+  visibility:hidden; 
+  background-color:#808080; 
+  opacity:0.6; 
+  z-index:99; 
+} 
+.Div_Scroll_Content 
+{ 
+  position:relative; 
+  margin-top:20%; 
+  width:inherit; 
+  height:inherit; 
+} 
+.Div_AlertWindow 
+{ 
+  margin:auto; 
+  width:200px; 
+  height:100px; 
+  background-color:lightblue; 
+  border:5px solid #f00; 
+} 
+</style> 
+<script type="text/javascript"> 
+window.onload=function ()
+{ 
+  var alertWindow=$("alertParent"); 
+  var Sure=$("Sure");
+  var alertButton=$("alertButton");
+  alertWindow.style.width=window.screen.availWidth+"px"; 
+  alertWindow.style.height=window.screen.height+"px"; 
+  Sure.onclick=function()
+  { 
+    alertWindow.style.visibility="hidden"; 
+  } 
+  alertButton.onclick=ShowAlert;
+} 
+function ShowAlert() 
+{ 
+  var alertWindow=$("alertParent"); 
+  alertWindow.style.visibility="visible"; 
+} 
+$=function(id)
+{ 
+  return document.getElementById(id); 
+} 
+</script> 
+</head> 
+<body> 
+<div id="alertParent" class="Div_Scroll"> 
+  <div class="Div_Scroll_Content"> 
+  <div id="AlertWindow" class="Div_AlertWindow"> 
+    <input type="button" id="Sure" value="关闭窗口" /> 
+  </div> 
+</div> 
+</div> 
+<div> 
+  <input id="alertButton" type="button" value="点击弹出窗口"/> 
+</div> 
+</body> 
+</html>

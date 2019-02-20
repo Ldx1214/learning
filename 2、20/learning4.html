@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+  line-height: 100px;
+}
+body {
+  background: #ccc;
+}
+.circle {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border-radius: 50%;
+  border: 5px solid #000;
+  box-shadow: 0 2px 4px rgba(0,0,0,.5);
+}
+.circleCenter {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  left: 50%;
+  top: 50%;
+  z-index: 99;
+  background: #000;
+}
+.pointer div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+.hourHand {
+  width: 10px;
+  height: 60px;
+  background: #000;
+  margin-left: -5px;
+  margin-top: -60px;
+  transform-origin: 5px 60px;
+  -webkit-transform-origin: 5px 60px;
+}
+.secondsHand {
+  width: 2px;
+  height: 110px;
+  background: #000;
+  margin-left: -1px;
+  margin-top: -110px;
+  transform-origin: 1px 110px;
+  -webkit-transform-origin: 1px 110px;
+}
+.minutesHand {
+  width: 6px;
+  height: 85px;
+  background: #000;
+  margin-left: -3px;
+  margin-top: -85px;
+  transform-origin: 3px 85px;
+  -webkit-transform-origin: 3px 85px;
+}
+.timeTag div {
+  position: absolute;
+  background: #000;
+}
+.short {
+  width: 2px;
+  height: 6px;
+  transform-origin: 1px 0px;
+  -webkit-transform-origin: 1px 0px;
+  margin-left: -1px;
+}
+.long {
+  width: 4px;
+  height: 15px;
+  transform-origin: 2px 0px;
+  -webkit-transform-origin: 2px 0px;
+  margin-left: -2px;
+}
+.midnight {
+  width: 100px;
+  height: 40px;
+  border: 4px solid #000;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  margin-left: -54px;
+  line-height: 40px;
+  color: #000;
+  font-size: 24px;
+  text-align: center;
+  font-family: arial;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,.5);
+}
+</style>
+</head>
+<body>
+<div class="circle">
+  <div class="midnight" id="midnight"></div>
+  <div class="timeTag" id="timeTag"></div>
+  <div class="circleCenter"></div>
+  <div class="pointer">
+    <div class="hourHand" id="hourHand"></div>
+    <div class="minutesHand" id="minutesHand"></div>
+    <div class="secondsHand" id="secondsHand"></div>
+  </div>
+</div>
+<script>
+function createTimeTag(r, ele) {
+  for (var i = 0; i < 60; i++) {
+    var tag = document.createElement('div');
+    var t = r - Math.cos(6 * i * Math.PI / 180) * r;
+    var l = Math.sin(6 * i * Math.PI / 180) * r + r;
+    tag.className = i % 5 == 0 ? 'long' : 'short';
+    tag.style.cssText = 'top:' + Math.round(t) + 'px;left:' + Math.round(l) + 'px;transform:rotate(' + 6 * i + 'deg);-webkit-transform:rotate(' + 6 * i + 'deg);';
+    ele.appendChild(tag);
+  }
+}
+function runtime() {
+  var time = new Date();
+  var nH = time.getHours();
+  var nM = time.getMinutes();
+  var nS = time.getSeconds();
+  var str = nH >= 12 ? 'PM' : 'AM';
+  midnight.innerHTML = str;
+  var hDeg = ((nH > 12 ? nH - 12 : nH) + nM / 60 + nS / 3600) * 30;
+  var mDeg = (nM + nS / 60) * 6;
+  var sDeg = Math.round(nS * 6);
+  console.log(sDeg)
+  hourHand.style.cssText = 'transform:rotate(' + hDeg + 'deg);-webkit-transform:rotate(' + hDeg + 'deg);';
+  minutesHand.style.cssText = 'transform:rotate(' + mDeg + 'deg);-webkit-transform:rotate(' + mDeg + 'deg);';
+  secondsHand.style.cssText = 'transform:rotate(' + sDeg + 'deg);-webkit-transform:rotate(' + sDeg + 'deg);';
+}
+var timeTag = document.getElementById('timeTag');
+var hourHand = document.getElementById('hourHand');
+var minutesHand = document.getElementById('minutesHand');
+var secondsHand = document.getElementById('secondsHand');
+var midnight = document.getElementById('midnight');
+createTimeTag(150, timeTag);
+runtime();
+setInterval(runtime, 1000)
+</script>
+</body>
+</html>
