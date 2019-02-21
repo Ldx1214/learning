@@ -1,0 +1,17 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>learning</title>
+</head>
+<body>
+  <script>
+    String.prototype.startWith=function(startStr){
+    var d = this.length - startStr.length;
+      return (d >= 0 && this.indexOf(startStr) == 0)
+    }
+    var str="softwhy.com";
+    console.log(str.startWith("sof"))
+  </script>
+</body>
+</html>

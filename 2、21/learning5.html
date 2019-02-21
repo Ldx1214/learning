@@ -1,0 +1,67 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<style type="text/css">
+#con div {
+  width: 100px;
+  margin: 5px 0 5px 0;
+  font-size: 9pt;
+  height: 23px;
+  color: white;
+}
+</style>
+<script>
+function $(e) {
+  return document.getElementById(e);
+}
+function roulMenu(e, maxW, minW) {
+  var divs = $(e).getElementsByTagName('div');
+  for (var index = 0; index < divs.length; index++) {
+    (function (index) {
+      var tims, timss;
+      divs[index].onmouseover = function () {
+        var self = this;
+        clearInterval(timss);
+        tims = setInterval(function () {
+          if (self.offsetWidth < maxW) {
+            self.style.width = self.offsetWidth + 5 + 'px';
+          }
+          else {
+            clearInterval(tims);
+          }
+        }, 10);
+      }
+      divs[index].onmouseout = function () {
+        var self = this;
+        clearInterval(tims);
+        timss = setInterval(function () {
+          if (self.offsetWidth > minW) {
+            self.style.width = self.offsetWidth - 5 + 'px';
+          }
+          else {
+            clearInterval(timss);
+          }
+        }, 10);
+      }
+    })(index);
+  }
+}
+window.onload = function () {
+  roulMenu('con', 200, 100);
+}     
+</script>
+</head>
+<body>
+<div id="con">
+  <div style="background-color:red">红色菜单</div>
+   <div style="background-color:green">绿色菜单 </div>
+   <div style="background-color:blue">蓝色菜单</div>
+   <div style="background-color:yellow">黄色菜单</div>
+   <div style="background-color:pink">粉色菜单</div>
+   <div style="background-color:orange">桔色菜单</div>
+   <div style="background-color:black">黑色菜单</div>
+ </div>
+</body>
+</html>

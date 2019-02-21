@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<style type="text/css">
+select{
+  font-size:12px;
+}
+</style>
+<script>
+window.onload = function () {
+  var obt = document.getElementById("big");
+  var osel = document.getElementById("name");
+  obt.onclick = function () {
+    osel.style.fontSize = "18px";
+  }
+}
+</script>
+</head>
+<body>
+<select id="name">
+  <option>李东旭</option>
+  <option>李发山</option>
+</select>
+<input type="button" value="放大一下" id="big"/>
+</body>
+</html>
