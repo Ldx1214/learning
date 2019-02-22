@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+	<div id="vue_det">
+		<h1>姓名 : {{name}}</h1>
+		<h1>年龄 : {{age}}</h1>
+		<h1>{{details()}}</h1>
+	</div>
+	<div id="example">
+		<button v-on:click="counter += 1">Add 1</button>
+		<p>{{ counter }}</p>
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#vue_det',
+			data: {
+				name: "李东旭",
+				age: "24",
+				alexa: "10000"
+			},
+			methods: {
+				details: function() {
+					return  this.name + "  努力学习！";
+				}
+			}
+		})
+		var example1 = new Vue({
+		  el: '#example',
+		  data: {
+		    counter: 0
+		  }
+		})
+	</script>
+</body>
+</html>

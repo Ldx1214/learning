@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+	    {{9+5}}<br>
+	    {{ ok ? 'YES' : 'NO' }}<br>
+	    {{ message.split('').reverse().join('-') }}
+    <div v-bind:id="'list-' + id">努力学习</div>
+	</div>   
+	<script>
+	new Vue({
+	  el: '#app',
+	  data: {
+	    ok: true,
+	    message: 'lidongxv',
+	    id : 1
+	  }
+	})
+	</script>
+</body>
+</html>

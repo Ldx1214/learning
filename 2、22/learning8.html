@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+	<div id="example-6">
+	  <select v-model="selected" multiple style="width: 50px;">
+	    <option>A</option>
+	    <option>B</option>
+	    <option>C</option>
+	  </select>
+	  <br>
+	  <span>Selected: {{ selected }}</span>
+	</div>
+	<script>
+		new Vue({
+		  el: '#example-6',
+		  data: {
+		    selected: []
+		  }
+		})
+	</script>
+</body>
+</html>
