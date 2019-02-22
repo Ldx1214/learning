@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>data</title>
+</head>
+<body>
+<div id="app">
+    <el-date-picker
+            v-model="value1"
+            type="datetime"
+            format="yyyy-MM-dd hh:mm"
+            value-format="yyyy-MM-dd hh:mm"
+            placeholder="选择日期时间">
+    </el-date-picker>
+    <el-button type="primary" @click="clickBtn">打印选择的时间</el-button>
+</div>
+<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: "#app",
+        data: {
+            value1: ""
+        },
+        methods: {
+            clickBtn: function () {
+                console.log(this.value1);
+            }
+        }
+
+    });
+</script>
+
+</body>
+
+</html>
