@@ -1,0 +1,129 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css">
+body{
+  text-align:center;
+}
+p{
+  cursor:pointer;
+  margin:0;
+  padding:0;
+  font-size:24px;
+  display:inline;
+}
+div a:link, div a:visited{
+  color:#666;
+  text-decoration:none;
+}
+div a:hover{
+  color:#FF6600;
+  text-decoration:underline;
+}
+div{
+  border:2px solid #666;
+  background:#fff;
+  margin:5px auto;
+  overflow:hidden;
+  display:none;
+  padding:5px 10px;
+}
+ul,li{
+  margin:0;
+  padding:0;
+}
+li{
+  list-style:none;
+  width:70px;
+}
+li.title{
+  font-weight:bold;
+}
+</style>
+<script type="text/javascript">
+var w=0;
+var h=0;
+function emotion(){
+  var oMenu=document.getElementById("menu");
+  if(w<=50){
+    oMenu.style.display = "block";
+    fnLarge();
+  }
+  else{
+    fnSmall();
+  }
+}
+function fnLarge(){
+  var oMenu=document.getElementById("menu");
+  if(w<200){
+    w+=50;
+    h+=25;
+    oMenu.style.width=w+"px";
+    oMenu.style.height=h+"px";
+    window.setTimeout("fnLarge()",10);
+  }
+}
+function fnSmall(){
+  var oMenu=document.getElementById("menu");
+  if(w>0){
+    w-=50;
+    h-=25;
+    oMenu.style.width=w+"px";
+    oMenu.style.height=h+"px";
+    window.setTimeout("fnSmall()",5);
+  }
+  else{
+    oMenu.style.display = "none";
+  }
+}
+window.onload=function(){
+  var op=document.getElementById("antzone");
+  var odiv=document.getElementById("menu");
+  var lis=odiv.getElementsByTagName("li");
+  op.onclick=function(){emotion();}
+  for(var index=0;index<lis.length;index++){
+    lis[index].onclick=function(){
+      fnSmall();
+    }
+  }
+}
+</script>
+</head>
+<body>
+<p id="antzone">请点击我</p>
+<div id="menu">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="80" valign="top" align="left">
+        <ul>
+          <li class="title">编程语言</li>
+          <li><a href="#">java</a></li>
+          <li><a href="#">javascript</a></li>
+          <li><a href="#">PHP</a></li>
+          <li></li>
+        </ul>
+      </td>
+      <td width="80" valign="top" align="left">
+        <ul>
+          <li class="title">大学课程</li>
+          <li><a href="#">高数</a></li>
+          <li><a href="#">线性代数</a></li>
+          <li><a href="#">英语</a></li>
+          <li><a href="#">c++</a></li>
+        </ul>
+      </td>
+      <td width="80" valign="top" align="left">
+        <ul>
+          <li class="title">家人</li>
+          <li><a href="#">妈妈</a></li>
+          <li><a href="#">爸爸</a></li>
+          <li><a href="#">妹妹</a></li>
+        </ul>
+    </td>
+   </tr>
+</table>
+</div>
+</body>
+</html>

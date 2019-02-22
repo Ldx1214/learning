@@ -1,0 +1,42 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>learning</title>
+    <script>
+    var count = 0;
+    var timer;
+    var timerOn = false;
+    var dom=null;
+    function timedCount() {
+      count++;
+      dom.innerHTML=count;
+      timer = setTimeout(function(){
+        timedCount()
+       }, 1000);
+    }
+    function doTimer() {
+      if (!timerOn) {
+        timerOn = true;
+        timedCount();
+      }
+    }
+    function stopCount() {
+      clearTimeout(timer);
+      timerOn = false;
+    }
+    window.onload=function(){
+      dom=document.getElementById("antzone");
+      var beginBt=document.getElementById("beginBt");
+      var stopBt=document.getElementById("stopBt");
+      beginBt.onclick=function(){doTimer()}
+      stopBt.onclick=function(){stopCount()}
+    }
+    </script>
+  </head>
+  <body>
+    <div id="antzone"></div>
+    <input type="button" id="beginBt" value="开始计数"/>
+    <input type="button" id="stopBt" value="停止计数"/>
+  </body>
+</html>

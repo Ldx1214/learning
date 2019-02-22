@@ -1,0 +1,21 @@
+<!DOCTYPE>
+<html> 
+<head> 
+<meta charset="utf-8">  
+<title>获取到代码中所有元素</title> 
+<script>
+window.onload = function () {
+  var odiv = document.getElementById("antzone");
+  var eles = document.getElementsByTagName('*');
+  var str = "";
+  for (var index = 0; index < eles.length; index++) {
+    str =str + eles[index].tagName + "<br/>";
+  }
+  odiv.innerHTML = str;
+}
+</script>
+</head>
+<body>
+<div id="antzone"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>learning</title>
+    <style type="text/css">
+    #box{
+      display:none;
+      width:315px;
+      height:180px; 
+      background:#CCC;
+      border:1px solid #333;
+      padding:12px;
+      text-align:center;
+    }
+    </style>
+    <script type="text/javascript">
+      function display(){
+        document.getElementById("box").style.display="block"; 
+      }
+      function disappear(){
+        document.getElementById("box").style.display="none"; 
+      }
+      window.onload=function(){
+        var olink=document.getElementById("link");
+        olink.onmouseover=function(){
+                                      display()
+                                    }
+        olink.onmouseout=function(){
+                                      disappear()
+                                    }
+      }
+    </script>
+  </head>
+  <body>
+    <a id="link" href="#">查看效果</a>
+    <div id="box"></div>
+  </body>
+</html>

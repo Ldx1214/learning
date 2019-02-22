@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css"> 
+#items{ 
+  width:900px; 
+  height:auto; 
+  margin:0 auto; 
+  padding:5px 0; 
+  clear:both; 
+} 
+#items ul, #items li{ 
+  list-style:none; 
+} 
+#items li{ 
+  width:500px; 
+  height:28px; 
+  text-align:left; 
+  padding-left: 0px; 
+  line-height:28px; 
+  border-bottom:dashed 1px #CCC;
+  cursor:pointer;
+} 
+</style> 
+<script type="text/javascript">
+window.onload=function(){
+  var obox=document.getElementById("items");
+  var obt=document.getElementById("bt");
+  var lis=obox.getElementsByTagName("li");
+    
+  obt.onclick=function(){
+    lis[1].style.color="blue";
+  }
+}
+</script> 
+</head> 
+<body> 
+<div id="items"> 
+  <ul> 
+    <li>只有努力奋斗才会有美好的未来</li> 
+    <li>没有任何人一开始就是高手，必须要好好学习</li> 
+    <li>每一天都是好天气</li> 
+    <li>每一天都是新的，所以要好好真心当前时间</li> 
+    <li>每一天都要努力向上</li> 
+  </ul> 
+</div> 
+<input type="button" id="bt" value="查看效果"/>
+</body> 
+</html>
