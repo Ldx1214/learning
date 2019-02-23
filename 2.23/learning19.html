@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+		function hello(){
+	  		var char = "hello,world";
+	  		return{
+	    		set:function(string){
+	      		return char = string;
+	    	},
+	    		print: function(){
+	      		console.log(char)
+	    }
+	  }
+	}
+	var say = hello();
+	say.set('new hello world') 
+	say.print()
+	</script>
+</body>
+</html>

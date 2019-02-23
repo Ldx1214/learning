@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script type="text/javascript"> 
+var wait=60; 
+function time(ele) { 
+  if (wait == 0) { 
+    ele.removeAttribute("disabled");      
+    ele.value="免费获取验证码"; 
+    wait = 60; 
+  } 
+  else { 
+    ele.setAttribute("disabled", true); 
+    ele.value=wait+"秒后可以重新发送"; 
+    wait--; 
+    setTimeout(function() { 
+      time(ele) 
+    },1000) 
+  } 
+} 
+   
+window.onload=function(){
+  var ele=document.getElementById("btn");
+  ele.onclick=function(){
+    time(this);
+  }
+}
+</script> 
+</head> 
+<body> 
+<input type="button" id="btn" value="免费获取验证码" /> 
+</body> 
+</html>

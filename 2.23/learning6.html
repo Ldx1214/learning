@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+		function cutstr(str, len) {
+		  var temp;
+		  var icount = 0;
+		  var patrn = /[^\x00-\xff]/;
+		  var strre = "";
+		  for (var i = 0; i < str.length; i++) {
+		    if (icount < len - 1) {
+		      temp = str.substr(i, 1);
+		      if (patrn.exec(temp) == null) {
+		        icount = icount + 1
+		      } else {
+		        icount = icount + 2
+		      }
+		      strre += temp
+		    } else {
+		      break
+		    }
+		  }
+		  return strre + "..."
+		}
+		var str="每天多练习代码，让自己尽快的恢复到健康的状态";
+		console.log(cutstr(str,15));
+	</script>
+</body>
+</html>

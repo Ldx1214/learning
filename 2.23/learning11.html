@@ -1,0 +1,17 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+		String.prototype.GetCN = function() { 
+		  var regEx = /[^\u4e00-\u9fa5\uf900-\ufa2d]/g; 
+		  return this.replace(regEx, ''); 
+		}; 
+		var str="李东旭";
+		console.log(str.GetCN());
+	</script>
+</body>
+</html>

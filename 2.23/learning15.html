@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style>
+#adiv{
+  width:200px;
+  height:100px;
+  background:#ccc;
+}
+</style>
+<script>
+function setOpacity(elem, level) {
+  if(elem.filters){
+    elem.style.filters = 'alpha(opacity=' + level + ')';
+  } 
+  else {
+    elem.style.opacity = level / 100;
+  }
+}
+window.onload=function(){
+  var odiv=document.getElementById("adiv");
+  var obt=document.getElementById("bt");
+  obt.onclick=function(){
+    setOpacity(odiv,50);
+  }
+}
+</script>
+</head>
+<body>
+<div id="adiv"></div>
+<input type="button" id="bt" value="查看效果"/>
+</body>
+</html>

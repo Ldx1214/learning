@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<style>
+#antzone{
+  width:500px; 
+  height:200px;
+  background:#ccc;
+  text-align:center;
+  line-height:200px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+  var odiv=document.getElementById("antzone");
+  var obt=document.getElementById("bt");
+  obt.onclick=function(){
+    odiv.innerHTML="李东旭的父亲是李发山";
+  }
+}
+</script>
+</head>
+<body>
+<div id="antzone">李东旭的母亲是张字芳</div>
+<input type="button" id="bt" value="点击按钮" />
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style>
+td {
+  cursor:hand;
+  font-size:12px
+}
+.click{
+  border-top:1px solid #0033CC;
+  border-bottom:1px solid #DDEEFF;
+  border-left:1px solid #0033CC;
+  border-right:1px solid #DDEEFF;
+  padding-top:5px;
+  padding-bottom:3px;
+  padding-left:5px;
+  padding-right:3px;
+}
+.hover{
+  border-top:1px solid #DDEEFF;
+  border-bottom:1px solid #0033CC;
+  border-left:1px solid #DDEEFF;
+  border-right:1px solid #0033CC;
+  padding:4px;
+}
+.normal{
+  border:1px solid #FFFFFF;
+  padding:4px;
+}
+</style>
+</head>
+<body>
+<script>
+function overbutton(ev){
+  var ev=window.event||ev;
+  if(this.className=="normal"){
+    this.className='hover';
+  } 
+}
+function outbutton(ev){
+  var ev=window.event||ev;
+  if(this.className=="hover"){
+    this.className='normal';
+  }
+}
+function clickbutton(ev){
+  var ev=window.event||ev;
+  var cells=box.rows[0].cells;
+  for (var index=0;index<cells.length ;index++ ){
+    cells[index].className="normal";
+  }
+  this.className='click';
+}
+window.onload=function(){
+  var obox=document.getElementById("box");
+  var tds=obox.getElementsByTagName("td");
+  for(var index=0;index<tds.length;index++){
+    tds[index].onmouseover=overbutton;
+    tds[index].onmouseout=outbutton;
+    tds[index].onclick=clickbutton;
+  }
+}
+</script>
+<table id="box">
+  <tr>
+    <td class="click">java</td>
+    <td class="normal">javascript</td>
+    <td class="normal">PHP</td>
+    <td class="normal">python</td>
+    <td class="normal">c++</td>
+    <td class="normal">go</td>
+    <td class="normal">c#</td>
+    <td class="normal">vb</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>learning</title>
+    <script>
+    function loadScriptString(code){
+      var script=document.createElement("script");
+      script.type="text/javascript";
+      try{
+        script.appendChild(document.createTextNode(code));
+      }
+      catch(ex){
+        script.text=code;
+      }
+      document.getElementsByTagName('head')[0].appendChild(script);
+    }
+    window.onload=function(){
+      var obt=document.getElementById("bt");
+      var str="var odiv=document.getElementById('show');"
+      str=str+"odiv.innerHTML='李东旭努力学习多练习代码'"
+      obt.onclick=function(){
+        loadScriptString(str);
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="show"></div>
+    <input type="button" id="bt" value="查看效果"/>
+  </body>
+</html>

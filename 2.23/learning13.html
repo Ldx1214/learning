@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style>
+#div{
+  width:100px;
+  height:100px;
+}
+</style>
+<script>
+window.onload=function(){
+  var oDv=document.getElementById('div');
+  oDv.style.backgroundColor='red';
+  setInterval(function(){
+    var arrRandNumber = [
+      getRandomNumber(0,255),
+      getRandomNumber(0,255),
+      getRandomNumber(0,255)   
+    ];
+    
+    oDv.style.backgroundColor='rgb('+arrRandNumber.toString()+')'
+    function getRandomNumber(rMin,rMax){
+      return Math.floor(rMin+Math.random()*(rMax-rMin));
+    }
+  },500)
+};
+</script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

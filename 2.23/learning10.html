@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script>
+function done(){
+  var len=13;
+  var harfLen=Math.floor(len/2);
+  var str="";
+  for(var i=0;i<len;i++){
+    if(i<=harfLen){
+      for(var j=0;j<harfLen-i;j++){
+            str=str+" ";  
+          }
+          for(x=0;x<i*2+1;x++){
+            str=str+"*";
+          }
+          str=str+"\n";
+        }
+        else{
+          for(var j=0;j<i-harfLen;j++){
+            str=str+" ";
+          }
+          for(var x=0;x<(2*harfLen-i)*2+1;x++){
+            str=str+"*";
+          }
+          str=str+"\n";
+        }
+  }
+  return str;
+}
+alert(done());
+</script>
+</head>
+<body>
+</body>
+</html>

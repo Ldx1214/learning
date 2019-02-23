@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<ul id="list">
+  		<li id="item1">请点击我们</li>
+  		<li id="item2">请点击我们</li>
+  		<li id="item3">请点击我们</li>
+  		<li id="item4">请点击我们</li>
+	</ul>
+	<script>
+		window.onload=function(){
+		  var ulNode=document.getElementById("list");
+		  var liNodes=ulNode.childNodes||ulNode.children;
+		  for(var index=0;index<liNodes.length;index++){
+		    liNodes[index].addEventListener('click',function(e){
+		      alert(e.target.innerHTML);
+		    },false);
+		  }
+		}
+	</script>
+</body>
+</html>

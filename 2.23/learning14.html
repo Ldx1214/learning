@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script>
+function changeContent(){
+  var tds=document.getElementById('myTable').rows[0].cells;
+  tds[0].innerHTML="父亲李发山";
+}
+window.onload=function(){
+  var obt=document.getElementById("bt");
+  obt.onclick=function(){
+    changeContent()
+  }
+}
+</script>
+</head>
+<body>
+<table id="myTable" border="1">
+  <tr>
+    <td>李东旭</td>
+    <td>李雨彤</td>
+  </tr>
+  <tr>
+    <td>div教程</td>
+    <td>css教程</td>
+  </tr>
+  <tr>
+    <td>json教程</td>
+    <td>正则表达式教程</td>
+  </tr>
+</table>
+<form>
+  <input type="button" id="bt"  value="查看效果"/>
+</form>
+</body>
+</html>
