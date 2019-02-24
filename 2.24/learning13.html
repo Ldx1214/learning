@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+		var arr=["lidongxu","lifashan","css","js","zhangzifang"];
+		function done(arr,ele){
+		  var temp=[];
+		  for(var index=0;index<arr.length;index++){
+		    if(arr[index]==ele){
+		          temp.push(true);
+		        }
+		  }
+		  return temp.length;
+		}
+		console.log(done(arr,"css"));
+	</script>
+</body>
+</html>

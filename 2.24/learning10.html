@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css">
+li{
+  width:240px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:12px;
+  height:30px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+  var oLis=document.getElementsByTagName("li");
+  var oshow=document.getElementById("show");
+  for(var index=0;index<oLis.length;index++){
+    oLis[index].onclick=function(){
+      oshow.innerHTML=index;
+    }
+  }
+}
+</script>
+</head>
+<body>
+<div id="show"></div>
+<ul>
+  <li>点击文字</li>
+  <li>只有努力奋斗才会有美好的明天。</li>
+  <li>分享互助是进步最大的源动力。</li>
+  <li>每一天都是新的，要好好珍惜。</li>
+  <li>没有人一开始就是高手，只有努力才有成长的可能</li>
+  <li>只有当下的时间是可贵的，下一秒都是虚幻的</li>
+</ul>
+</body>
+</html>

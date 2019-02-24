@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script>
+window.onload=function(){
+  var count=2;
+  var num=0;
+  var odiv=document.getElementById("show");
+  var obox=document.getElementById("box");
+  var cks=obox.getElementsByTagName("input");
+  for(var index=0;index<cks.length;index++){
+    cks[index].onclick=function(){
+      if(this.checked){
+        if(num==count){
+          odiv.innerHTML="已经达到最大选中上限";
+          return false;
+        }
+        else{
+          num++;
+        }
+      }
+      else{
+        num--;
+      }
+    }
+  }
+}
+</script>
+<body>
+<div id="box"> 
+<form name="form">
+  最多只能选择两门课程: 
+  <p><input type="checkbox" name="div"/>div教程
+  <p><input type="checkbox" name="css"/>css教程  
+  <p><input type="checkbox" name="json"/>json教程  
+  <p>    
+</form>
+</div>
+<div id="show"></div>
+</body>
+</html>

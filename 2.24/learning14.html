@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script type="text/javascript"> 
+window.onload=function(){
+  var ck=document.getElementById("ck");
+  var bt=document.getElementById("bt");
+  var show=document.getElementById("show");
+  bt.onclick=function(){
+    if(ck.checked){
+      show.innerHTML="复选框已经选中";
+    }
+    if(!ck.checked){
+      show.innerHTML="复选框没有选中";
+    }
+  }
+}
+</script> 
+</head>
+<body>
+<div id="show"></div>
+<input type="checkbox" id="ck" value="1"/>
+<input type="button" id="bt" value="查看效果"/>
+</body>
+</html>

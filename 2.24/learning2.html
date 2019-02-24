@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<style type="text/css">
+body{
+  margin:0;
+  padding:0;
+  font-size:12px;
+}
+a:link{
+  color:#1553a9;
+  text-decoration:none;
+}
+a:visited{
+  text-decoration:none;
+  color:#1553a9;
+}
+a:hover{
+  text-decoration:none;
+  color:#f46662;
+}
+a:active{
+  text-decoration:none;
+  color:#f46662;
+}
+#main{
+  width:500px;
+  margin:0 auto;
+  margin-top:100px;
+}
+#de{
+  display:block;
+  width:100px;
+  height:30px;
+  line-height:30px;
+  float:right;
+  border:#b7b7b7 1px solid;
+  padding-left:5px;
+  border-right:0;
+}
+#go{
+  width:30px;
+  float:right;
+  height:22px;
+  border:#b7b7b7 1px solid;
+  border-left:0;
+  padding-top:10px;
+  padding-left:15px;
+  background-color:#464646;
+  cursor:pointer;
+  color:#FFFFFF;
+}
+</style>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+  $("#de").mouseover(function(){
+    $("#de").animate({"width":"250px"});
+  }).mouseout(function(){
+    $("#de").animate({"width":"100px"});
+  });
+});
+</script>
+</head>
+<body>
+<div id="main">
+  <div id="ss">
+    <div id="go">→</div>
+    <input type="text" id="de"/>
+  </div>
+</div>
+</body>
+</html>

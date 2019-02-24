@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<title>learning</title>
+<style>
+ul li{
+  width:400px;
+  height:30px;
+  line-height:30px;
+  list-style:none;
+}
+</style>
+<script>
+window.onload=function(){
+  var obt=document.getElementById("bt");
+  var obox=document.getElementById("box");
+  obt.onclick=function(){
+    if(confirm("是否要清空?")){
+      obox.innerHTML="";
+    }
+  }
+}
+</script>
+</head>
+<body>
+<ul id="box">
+  <li>只有努力奋斗才会有美好的明天。</li>
+  <li>没有任何人一开始就是高手，必须要努力奋斗才行。</li>
+  <li>每一天都是新的，要好好的珍惜时间。</li>
+</ul>
+<input type="button" id="bt" value="点击删除"/>
+</body>
+</html>

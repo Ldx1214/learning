@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>learning</title>
+</head>
+<body>
+  <script>
+    String.prototype.reverse=function(){
+    var str='';
+    for(var index=this.length-1;index>=0;index--){
+      str+=this[index];
+    }
+    return str;
+  }
+  var str="lidongxu";
+  console.log(str.reverse())
+  </script>
+</body>
+</html>

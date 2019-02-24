@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>learning</title>
+<script type="text/javascript"> 
+sources= new Array("www.softwhy.com","www.baidu.com","www.google.com","softwhy.net"); 
+tabinfo = ""; 
+flag=new Array(sources.length); 
+for(var index=0;index<flag.length;index++){
+  flag[index]=false ; 
+}
+  
+function immediately(){ 
+  var element=document.getElementById("txt"); 
+  if("\v"=="v"){ 
+    element.onpropertychange=webChange; 
+  }
+  else{ 
+    element.addEventListener("input",webChange,false); 
+  } 
+  
+  function webChange(){ 
+    var tab = document.all("dl1");
+           
+    for(var index=0;index<flag.length;index++){
+      flag[index] = false ;//重新初始化 
+    } 
+          
+    if(element.value){ 
+      var content=document.getElementById("txt").value; 
+      for(var index=0;index<sources.length;index++){ 
+        if(sources[index].indexOf(content)!=-1){ 
+          flag[index]=true;    
+        } 
+      } 
+      for(var j=0;j<flag.length;j++){   
+        if(flag[j]){
+          if(tab.rows.length>0){ 
+            for(var k=0;k<tab.rows.length;k++){ 
+              if(tab.rows[k].cells[0].innerText.indexOf(content) == -1){
+                tab.deleteRow(k); 
+              }    
+            }
+          } 
+          for(var k=0;k<tab.rows.length;k++){ 
+            tabinfo += tab.rows[k].cells[0].innerText; 
+          }   
+          if(tabinfo.indexOf(sources[j]) == -1){  
+            nrow = tab.insertRow(0); 
+            newcell = nrow.insertCell(); 
+            newcell.innerHTML = sources[j]  
+          } 
+          tabinfo = ""; 
+        }  
+      } 
+    } 
+  } 
+} 
+  
+var lastObj=null;  
+function setSingleBack(){ 
+  event.srcElement.style.background="gray"; 
+  forceBackColor(); 
+  if(event.srcElement.tagName=="TD"){ 
+    lastObj=event.srcElement; 
+  } 
+  fillData(); 
+} 
+function setAllBack(){ 
+  event.srcElement.style.background="#CCCCCC"; 
+} 
+function forceBackColor(){ 
+  if(lastObj!=null){
+    lastObj.style.background="#F8F8FF";
+  }
+}
+function fillData(){ 
+  if(lastObj.innerHTML!=null){
+    document.all.txt.value=lastObj.innerHTML;  
+  }
+} 
+function init(){ 
+  layer.style.top=txt.offsetTop+40; 
+  layer.style.left=txt.offsetLeft; 
+  layer.style.visibility="visible"; 
+} 
+function hideBelow(){ 
+  layer.style.visibility="hidden"; 
+}
+window.onload=function(){
+  var otxt=document.getElementById("txt");
+  var odll=document.getElementById("dl1");
+  immediately();
+  otxt.onfocus=function(){
+    init();
+  }
+  otxt.onblur=function(){
+    hideBelow();
+  }
+  odll.onmouseout=function(){
+    setAllBack();
+  }
+  odll.onmouseover=function(){
+    setSingleBack();
+  }
+}
+</script>
+</head> 
+<body> 
+<input type="text" id="txt" style="height:20px"/> 
+<div id="layer"> 
+  <table id="dl1" cellspacing="0" border="0"></table> 
+</div>
+</body> 
+</html>
