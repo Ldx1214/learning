@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+		<meta charset="UTF-8">
+		<title>learning</title>
+		<script type="text/javascript">  
+		window.onload=function(){
+		  var odiv=document.getElementById("adiv");
+		  var obt=document.getElementById("bt");
+		  var ospan=document.getElementsByTagName("span")[0];
+		  obt.onclick=function(){
+		    odiv.removeChild(ospan);
+		  }
+		}
+		</script>
+		</head>
+		<body>
+		<div id="adiv">
+		  <span>李东旭</span>
+		</div>
+		<input type="button" id="bt" value="删除元素"/>
+		</body>
+	</html>

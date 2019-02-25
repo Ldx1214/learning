@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <title>learning</title>
+  <style type="text/css">
+  #top,#bottom{
+    width:150px;
+    height:150px;
+    background-color:blue;
+    margin-bottom:10px;
+  }
+  #topdiv,#bottomdiv{
+    width:50px;
+    height:50px;
+    background-color:red;
+  }
+  </style>
+  <script type="text/javascript"> 
+  window.onload=function(){
+    var topbt=document.getElementById("topbt");
+    var topdiv=document.getElementById("topdiv");
+      
+    var bottombt=document.getElementById("bottombt");
+    var bottomdiv=document.getElementById("bottomdiv");
+      
+    topbt.onclick=function(){topdiv.style.display="none";}
+    bottombt.onclick=function(){bottomdiv.style.visibility="hidden";}
+  }
+  </script> 
+  </head> 
+  <body > 
+  <div id="top">
+    <div id="topdiv"></div>
+    <input type="button" value="点击隐藏" id="topbt">  
+  </div>
+  <div id="bottom">
+    <div id="bottomdiv"></div>
+    <input type="button" value="点击隐藏" id="bottombt">    
+  </div>
+  </body> 
+  </html>

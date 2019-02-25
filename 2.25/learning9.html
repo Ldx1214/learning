@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <title>learning</title>
+  <script type="text/javascript">
+  function GetRowNo(ev,obj) { 
+    var ev=ev||window.event; 
+    var target=ev.target||ev.srcElement; 
+    if(target.tagName.toLowerCase()=="td"){ 
+      obj.innerHTML=target.innerHTML;
+    } 
+  }
+  window.onload=function(){
+    var oshow=document.getElementById("show");
+    var otb=document.getElementById("tb");
+    otb.onclick=function(ev){
+      GetRowNo(ev,oshow);
+    }  
+  }
+  </script>
+  </head>
+  <body>
+  <div id="show"></div>
+  <table id="tb" border="1">
+    <tr>
+      <th>姓名</th>
+      <th>性别</th>
+      <th>密码</th>
+      <th>地址</th>
+    </tr>
+    <tr>
+      <td>李东旭</td>
+      <td>男</td>
+      <td>weihe</td>
+      <td>苇河</td>
+    </tr>
+    <tr>
+      <td>李发山</td>
+      <td>男</td>
+      <td>weihe</td>
+      <td>苇河</td>
+    </tr>
+  </table>
+  </body>
+  </html>

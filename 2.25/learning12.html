@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>learning</title>
+    <script type="text/javascript"> 
+    window.onload= function() { 
+      var obox=document.getElementById("box");
+      var lis=obox.children;
+        
+      var obt=document.getElementById("bt");
+      obt.onclick=function(){
+        obox.insertBefore(lis[1],lis[3])
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <ul id="box"> 
+      <li>李东旭一</li> 
+      <li>李东旭二</li> 
+      <li>李东旭三</li> 
+      <li>李东旭四</li> 
+      <li>李东旭五</li> 
+    </ul>
+    <input type="button" id="bt" value="查看效果">
+  </body>
+</html>

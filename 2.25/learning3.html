@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <title>learning</title>
+  <style type="text/css">
+  .btn,
+  .btn2 {
+    position: relative;
+    display: block;
+    padding: 10px;
+    width: 100px;
+    margin: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #333;
+    transition: all 0.3s ease 0s;
+  }
+  .btn:before,
+  .btn:after {
+    position: absolute;
+    content: "";
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+  }
+  .btn:after {
+    right: -8px;
+    top: 6px;
+    width: 6px;
+    height: 42px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+  }
+  .btn:before {
+    left: 8px;
+    bottom: -11px;
+    width: 118px;
+    height: 7px;
+    border-bottom: 2px solid #333;
+    border-left: 2px solid #333;
+  }
+  .btn:hover::before {
+    left: -2px;
+    bottom: -2px;
+    height: 0;
+    width: 122px;
+  }
+  .btn:hover::after {
+    right: -2px;
+    top: -2px;
+    width: 0;
+  }
+  .btn:active {
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.125) inset;
+  }
+  .btn2 {
+    position: relative;
+    color: #fff;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    background: linear-gradient(to top, #262626 0px, #404040 10px, #262626 10px, #333 100%);
+    overflow: hidden;
+  }
+  .btn2:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: -148px;
+    width: 144px;
+    height: 12px;
+    background: #0f0;
+    transform: skew(-30deg);
+    transition: all 0.5s ease 0s;
+  }
+  .btn2:hover::after {
+    left: -5px;
+  }
+  </style>
+  </head>
+  <body>
+    <div class="btn">button</div>
+    <div class="btn2">btn</div>
+  </body>
+  </html>

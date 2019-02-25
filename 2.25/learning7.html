@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>learning</title>
+      <style type="text/css">
+      body{
+        height:1000px;
+        margin:20px;
+      }
+      #thediv{
+        width:100px;
+        height:100px;
+        background:red;
+        position:fixed;
+        top:100px;
+        left:100px;
+        border:50px solid blue;
+      }
+      input{
+        margin-top:200px;
+      }
+        </style>
+      <script type="text/javascript"> 
+      window.onload=function(){
+        var odiv=document.getElementById("thediv");
+        var obt=document.getElementById("bt");
+        obt.onclick=function(){
+          odiv.innerHTML=odiv.clientWidth;
+        }  
+      }
+      </script>
+    </head>
+    <body>
+      <div id="thediv"></div>
+      <input type="button" id="bt" value="查看效果"/>
+    </body>
+  </html>

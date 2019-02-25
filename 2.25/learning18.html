@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <title>learning</title>
+  <style type="text/css">
+  #thediv{
+    width:200px;
+    height:300px;
+    border:1px solid green;
+  }
+  </style>
+  <script type = "text/javascript"> 
+  function creat(){ 
+    var linkElement=document.createElement("a");
+    linkElement.href="http://www.baidu.com"; 
+    linkElement.innerHTML="李东旭"; 
+    linkElement.id="theid";
+    var odiv=document.getElementById("thediv");
+    odiv.appendChild(linkElement); 
+  } 
+  function del(){ 
+    var odiv=document.getElementById("thediv");
+    odiv.removeChild(document.getElementById("theid")); 
+  } 
+  window.onload=function(){
+    var creatBt=document.getElementById("creatBt");
+    var deBt=document.getElementById("deBt");
+    creatBt.onclick=function(){creat()}
+    deBt.onclick=function(){del()}
+  }
+  </script> 
+  </head>
+  <body> 
+  <input type="button" id="creatBt" value="创建一个超链接"/> 
+  <input type="button" id="deBt" value="删除添加的元素"/> 
+  <div id="thediv"></div> 
+  </body> 
+  </html>

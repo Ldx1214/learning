@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>learning</title>
+	</head>
+	<body>
+		<script>
+			function say(){
+			  var num=666;
+			  var show=function(){
+			    alert(num);
+			  }
+			  num++;
+			  return show;
+			}
+			var sayAlert=say();
+			sayAlert();
+		</script>
+	</body>
+	</html>
