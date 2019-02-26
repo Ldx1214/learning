@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<script type="text/javascript">
+function check() {
+  var sel=document.getElementById("sel");
+  var selValue=sel.options[sel.options.selectedIndex].value;
+  var selTxt=sel.options[sel.options.selectedIndex].text;
+  alert(selValue);
+  alert(selTxt);
+}
+window.onload=function(){
+  var bt=document.getElementById("bt");
+  bt.onclick=function(){
+    check() 
+  }
+}
+</script>
+</head>
+<body>
+<select name="select" id="sel">
+  <option value="1" selected="selected">李东旭</option>
+  <option value="2">李雨桐</option>
+</select>
+<input type="button" value="点击获取" id="bt"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"> 
+		<title>learning</title>
+		<script type="text/javascript">
+		function txtFocus(el) {
+		  if(el.defaultValue == el.value) { 
+		   el.value = ''; 
+		   el.style.color = 'red'; 
+		  }
+		}
+		function txtBlur(el) {
+		  if(el.value == '') 
+		  { 
+		    el.value = el.defaultValue; 
+		    el.style.color = '#000'; 
+		  }
+		}
+		</script>
+	<body>
+		<input type="text" onfocus="txtFocus(this)" onblur="txtBlur(this)" value='请输入'>
+	</body>
+</html>

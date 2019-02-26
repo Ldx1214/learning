@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>learning</title>
+</head>
+<body>
+  <script>
+    function unique(arr){
+    var obj = {},newArr = [];
+    for(var i = 0;i < arr.length;i++){
+      var value = arr[i];
+      if(!obj[value]){
+        obj[value] = 1;
+        newArr.push(value);
+      }
+    }
+    return newArr;
+  }
+  var theArray=[1,2,3,4,5,2,1];
+  console.log(unique(theArray));
+  </script>
+</body>
+</html>

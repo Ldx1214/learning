@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>learning</title>
+</head>
+<body>
+  <script>
+    var theArray=[1,2,5,"李东旭","李雨桐"]
+    function contains(arr,content) {
+      var i=arr.length;
+      while(i--) {
+        if (arr[i]===content) {
+          return true;
+        }   
+      }   
+      return false;
+    }
+    console.log(contains(theArray,2));
+  </script>
+</body>
+</html>

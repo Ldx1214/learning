@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<script type="text/javascript">
+function printdiv(printpage){
+  var newstr=document.getElementById(printpage).innerHTML;
+  var oldstr=document.body.innerHTML;
+  document.body.innerHTML=newstr;
+  window.print(); 
+  document.body.innerHTML=oldstr;
+  return false;
+}
+window.onload=function(){
+  var bt=document.getElementById("bt");
+  bt.onclick=function(){printdiv('div_print');}
+}
+</script>
+</head>
+<body>
+<input type="button"  id="bt" value="点击打印"/>
+<div id="div_print">
+<h1 style="Color:Red">此div中的内容将会被打印。</h1>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<script type="text/javascript"> 
+window.onload=function(){
+  var bt=document.getElementById("bt");
+  bt.onclick=function(){
+    var chk=document.createElement("input"); 
+    chk.setAttribute("type","checkbox"); 
+    chk.setAttribute("checked",true); 
+    document.body.appendChild(chk); 
+  }
+}
+</script> 
+</head> 
+<body>
+<input type="button" id="bt" value="添加复选框"/>
+</body> 
+</html>

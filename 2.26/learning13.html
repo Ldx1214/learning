@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<style type="text/css">
+#backcolor {
+  width:400px;
+  height:400px;
+  background:#FFFF00;
+  text-align:center;
+  border:ridge 30pt red;
+  margin:auto;
+}
+td {
+  border:ridge 3pt red;
+  width:100px;
+  height:100px;
+}
+div {
+  width:auto;
+  height:100px;
+  text-align:center;
+  line-height:100px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function() {
+  var divArry=document.getElementsByName('divname');
+  var divto=document.getElementById('div12');
+  var arry=['春节','情人节','不知道有什么节日！','清明节','劳动节','儿童节','好像这个月没有什么重大的节日吧！','建军节','教师节','国庆节','光棍节','圣诞节'];
+  for(var i=0;i<divArry.length;i++) {
+    divArry[i].index = i;
+    divArry[i].onmouseover=function() {
+      for(var i=0;i<divArry.length;i++) 
+      {
+        divArry[i].style.background='';
+      }
+      this.style.background='red';
+      divto.innerHTML = '<h3>' + this.innerHTML + arry[this.index] + '</h3>';
+    }
+  }
+};
+</script>
+</head>
+<body>
+<table id="backcolor">
+  <tr>
+    <td><div id="div0" name="divname"> 一月 </div></td>
+    <td><div id="div1" name="divname"> 二月 </div></td>
+    <td><div id="div2" name="divname"> 三月 </div></td>
+    <td><div id="div3" name="divname"> 四月 </div></td>
+  </tr>
+  <tr>
+    <td><div id="div4" name="divname"> 五月 </div></td>
+    <td><div id="div5" name="divname"> 六月 </div></td>
+    <td><div id="div6" name="divname"> 七月 </div></td>
+    <td><div id="div7" name="divname"> 八月 </div></td>
+  </tr>
+  <tr>
+    <td><div id="div8" name="divname"> 九月 </div></td>
+    <td><div id="div9" name="divname"> 十月 </div></td>
+    <td><div id="div10" name="divname"> 十一月 </div></td>
+    <td><div id="div11" name="divname"> 十二月 </div></td>
+  </tr>
+  <tr>
+    <td colspan="4"><div id="div12" style="width: 400px;"> </div></td>
+  </tr>
+</table>
+</body>
+</html>

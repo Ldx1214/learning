@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<style type="text/css">
+#tab{
+  text-align:center; 
+  width:500px; 
+  margin: 200px auto  
+}
+</style>
+<script type="text/javascript">
+window.onload=function() {
+  var otab=document.getElementById('tab');
+  var thiscolor='';
+  for(var i=0;i<otab.tBodies[0].rows.length;i++)  {
+    otab.tBodies[0].rows[i].onmouseover = function () {
+      thiscolor=this.style.background;
+      this.style.background='#00FFFF';
+    };
+    otab.tBodies[0].rows[i].onmouseout=function(){
+      this.style.background = thiscolor;
+    };
+    if(i%2) {
+      otab.tBodies[0].rows[i].style.background='';
+    }
+    else {
+      otab.tBodies[0].rows[i].style.background='#FFFF00';
+    }
+  }
+};
+</script>
+</head>
+<body>
+<table id="tab" border="1">
+  <thead>
+    <tr style="background-color:#FF0000">
+      <td>李东旭一</td>
+      <td>李东旭二</td>
+      <td>李东旭三</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>李东旭一</td>
+      <td>李东旭二</td>
+      <td>李东旭三</td>
+    </tr>
+    <tr>
+      <td>李东旭一</td>
+      <td>李东旭二</td>
+      <td>李东旭三</td>
+    </tr>
+    <tr>
+      <td>李东旭一</td>
+      <td>李东旭二</td>
+      <td>李东旭三</td>
+    </tr>
+    <tr>
+      <td>李东旭一</td>
+      <td>李东旭二</td>
+      <td>李东旭三</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>复选框的全选和取消代码-蚂蚁部落</title> 
+<script type="text/javascript">
+window.onload=function(){
+  var ckall=document.getElementById("control");
+  var cks=document.getElementsByName("ck");
+  var title=document.getElementById("title");
+  ckall.onclick=function(){
+    for (var i=0;i<cks.length;i++){
+      if(ckall.checked==true){
+        cks[i].checked=true;
+        title.innerHTML="取消";
+      }
+      else{
+        cks[i].checked=false;
+        title.innerHTML="全选";
+      }
+    }
+  }
+}
+</script>
+</head>
+<body>
+<form id="form1">
+  <input type="checkbox" id="control" />
+  <span id="title">全选</span>
+  <div id="box">
+    <input type="checkbox" name="ck" />
+    <input type="checkbox" name="ck" />
+    <input type="checkbox" name="ck" />
+    <input type="checkbox" name="ck" />
+    <input type="checkbox" name="ck" />
+    <input type="checkbox" name="ck" />
+  </div>
+</form>
+</body>
+</html>

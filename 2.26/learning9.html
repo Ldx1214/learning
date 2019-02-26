@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<style type="text/css">
+#main {
+  border:1px solid black;
+  width:200px;
+  margin:0px auto;
+  padding:100px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+  var methodName="showMsg()";
+  setInterval(methodName,1000);
+}
+var seconds=25;
+function showMsg(){
+  if(seconds>0) {
+    seconds--;
+    document.getElementById("msg").innerHTML=seconds+"秒钟后自动关闭！";
+  }
+  else {
+    window.close();
+  }
+}
+</script>
+</head>
+<body>
+<div id="main">
+  <div id="msg">25秒钟后自动关闭！</div>
+</div>
+</body>
+</html>
