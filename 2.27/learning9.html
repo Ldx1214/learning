@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<head>
+	<title>learning</title>
+	<script type="text/javascript"> 
+		function onblurs(){ 
+		  if(myform.username.value==""){ 
+		    alert("姓名不能为空！"); 
+		  }
+		  else if(myform.address.value==""){ 
+		    alert("地址不能为空！"); 
+		  } 
+		} 
+		window.onload=function(){
+		  var username=document.getElementById("username");
+		  var address=document.getElementById("address");
+		  username.onblur=onblurs;
+		  address.onblur=onblurs;
+		}
+	</script>
+</head>
+	<body>
+	<form name="myform" action="#">
+	  <table>
+	    <tr>
+	      <td>姓名:</td>
+	      <td><input type="text" id="username"/></td>
+	    </tr>
+	    <tr>
+	      <td>地址:</td>
+	      <td><input type="text" id="address"/></td>
+	    </tr>
+	  </table>
+	</form>
+</body>
+</html>

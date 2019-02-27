@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  <head>
+    <title>learning</title>
+    <style type="text/css">
+    div{
+      width:50px;
+      height:50px;
+      background:red;
+      margin-top:10px;
+    }
+    .bg{
+      background-color:blue;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload=function(){
+      var firstDiv=document.getElementById("firstDiv");
+      var secondDiv=document.getElementById("secondDiv");
+      var first=document.getElementById("first");
+      var second=document.getElementById("second");
+        
+      first.onclick=function(){
+         firstDiv.style.backgroundColor="green";
+      }
+      second.onclick=function(){
+         secondDiv.className="bg";
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="firstDiv"></div>
+    <div id="secondDiv"></div>
+    <input type="button" value="使用第一种样式" id="first" />
+    <input type="button" value="使用第二种样式" id="second" />
+  </body>
+</html>
