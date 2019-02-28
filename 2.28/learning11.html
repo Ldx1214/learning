@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>	
+<script type="text/javascript">
+	function sum(){
+		var sum=0;
+		var comNodes=document.getElementsByName("computer");
+		for(var x=0;x<comNodes.length;x++){
+				if(comNodes[x].checked){
+					sum+=parseInt(comNodes[x].value);	
+				}
+		}
+		alert("总计="+sum);
+	}
+	function selectAll(){
+		var comNodes=document.getElementsByName("computer");
+		for(var x=0;x<comNodes.length;x++){
+				comNodes[x].checked=true;
+		}
+	}
+	function cancelAll(){
+		var comNodes=document.getElementsByName("computer");
+		for(var x=0;x<comNodes.length;x++){
+				comNodes[x].checked=false;
+		}	
+	}
+	function checkAll_1(){
+		var checkNode=document.getElementsByName("check")[0];
+		var comNodes=document.getElementsByName("computer");
+		for(var x=0;x<comNodes.length;x++){
+				comNodes[x].checked=checkNode.checked;
+		}	
+	}
+	function reverseAll(){
+		var comNodes=document.getElementsByName("computer");
+		for(var x=0;x<comNodes.length;x++){
+				if(comNodes[x].checked){
+					comNodes[x].checked=false;
+				}else{
+					comNodes[x].checked=true;
+				}
+		}
+	}
+</script>
+ 
+<input type="checkbox" name="check" onclick="checkAll_1()"/>全选<br/>
+<input type="checkbox" name="computer" value="1000" />笔记本电脑  1000元<br/>
+<input type="checkbox" name="computer" value="2000" />笔记本电脑  2000元<br/>
+<input type="checkbox" name="computer" value="3000" />笔记本电脑  3000元<br/>
+<input type="checkbox" name="computer" value="4000" />笔记本电脑  4000元<br/>
+<input type="checkbox" name="computer" value="5000" />笔记本电脑  5000元<br/>
+<input type="checkbox" name="computer" value="6000" />笔记本电脑  6000元<br/>
+<input type="checkbox" name="computer" value="7000" />笔记本电脑  7000元<br/>
+<input type="button" value="总计" onclick="sum()" />
+<input type="button" value="全选" onclick="selectAll()" />
+<input type="button" value="全不选" onclick="cancelAll()" />
+<input type="button" value="反选" onclick="reverseAll()" />
+</body>
+</html>

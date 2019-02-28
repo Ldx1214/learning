@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+<select id="province" onchange="changeCity(this.value)"> 
+	<option selected="selected" value="0">-请选择-</option>
+    <option value="1">山西</option>
+    <option value="2">北京</option>
+    <option value="3">浙江</option>
+    <option value="4">山东</option>
+</select>
+<select id="city">
+	<option>-请选择-</option>
+</select>
+<script>
+	var arr=new Array(4);
+	arr[0]=["-请选择-"];
+	arr[1]=["太原市","大同市","临汾市","吕梁市","阳泉市"];
+	arr[2]=["朝阳区","海淀区","通州区","东城区","西城区","丰台区"];
+	arr[3]=["宁波市","温州市","杭州市","绍兴市","余杭市"];
+	arr[4]=["青岛市","烟台市","济南市","日照市","聊城市"];
+	function changeCity(val){
+		var selCity=document.getElementById("city");
+		var cityNodes=selCity.getElementsByTagName("option");
+		for(var x=0;x<cityNodes.length;x++){
+			selCity.removeChild(cityNodes[x]);
+			x--;	
+		}
+		for(var y=0;y<arr[val].length;y++){
+			var optionNode=document.createElement("option");
+			optionNode.innerHTML=arr[val][y];
+			selCity.appendChild(optionNode);
+		}
+	}
+</script>
+</body>
+</html>

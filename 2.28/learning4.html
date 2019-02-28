@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style type="text/css"> 
+		div { 
+		  width:150px; 
+		  height:30px; 
+		  line-height:30px; 
+		  margin:0px auto; 
+		} 
+	</style> 
+	<script type="text/javascript"> 
+		window.onload=function() { 
+		  let one = document.getElementById("one");
+		  let two = document.getElementById("two");
+		  one.onclick = function (ev) { 
+		    ev.preventDefault(); 
+		  } 
+		  two.onclick = function (ev) { 
+		    return false;
+		  } 
+		} 
+	</script> 
+</head>
+<body>
+	<div><a href="http://www.softwhy.com" id="one">蚂蚁部落一</a></div> 
+  	<div><a href="http://www.softwhy.com" id="two">蚂蚁部落二</a></div> 
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>learning</title>
+    <style type="text/css">
+    .antzone {
+      border-bottom: 5px solid #ccc;
+      height: 5px;
+      width: 400px;
+      position: relative;
+      display: block;
+    }
+    .antzone:before {
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 5px;
+      top: 5px;
+      left: 50%;
+      background-color: #f00;
+      transition: all 0.35s ease-in-out;
+      -webkit-transition: all 0.35s ease-in-out;
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      transform: scale(0);
+    }
+    .antzone:hover:before {
+      -webkit-transform: scaleX(40);
+      -moz-transform: scaleX(40);
+      transform: scaleX(40);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="antzone"></div>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+    <title>learning</title>
+      <style type="text/css">
+      body, ul{
+        margin:0;
+        padding:0;
+      }
+      #box{
+        width:150px;
+        height:200px;
+        background:#0CF;
+        position:absolute;
+        left:-150px;
+      }
+      ul li{
+        list-style-type:none;
+      }
+      ul li a{
+        display:block;
+        height:28px;
+        text-decoration:none;
+      }
+      #span {
+        width:20px;
+        height:80px;
+        position:absolute;
+        top:70px;
+        background:#ffc;
+        right:-20px;
+      }
+      </style>
+      <script type="text/javascript">
+      var timer;
+      function startMove(){ 
+        clearInterval(timer);
+        var odiv=document.getElementById("box");
+        timer=setInterval(function(){
+          if(odiv.offsetLeft>=0){
+            clearInterval(timer);
+          }
+          else{ 
+            odiv.style.left=odiv.offsetLeft+3+"px";
+          }
+        },30);
+      }
+      function obMove(){ 
+        clearInterval(timer);
+        var odiv=document.getElementById("box");
+        timer=setInterval(function(){
+          if(odiv.offsetLeft<=-150){
+            clearInterval(timer);
+          }
+          else{ 
+            odiv.style.left=odiv.offsetLeft-3+"px";
+          }
+        },30); 
+      } 
+      window.onload=function(){  
+        document.getElementById("box").onmouseover=startMove;
+        document.getElementById("box").onmouseout=obMove;
+      }
+       </script>
+      </head>
+   <body>
+   <div id="box"> 
+     <span id="span">李东旭</span>
+     <ul>
+       <li><a href="#">javascript</a></li>
+       <li><a href="#">css</a></li>
+       <li><a href="#">java</a></li>
+       <li><a href="#">go</a></li>
+       <li><a href="#">c++</a></li>
+     </ul>
+   </div>
+  </body>
+</html>

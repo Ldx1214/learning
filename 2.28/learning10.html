@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<div id="div_1"></div>
+<script type="text/javascript">
+	function showDate(){
+		var date=new Date();
+		var d=date.toLocaleString();
+		var div1=document.getElementById("div_1");
+		div1.innerHTML=d;
+	}
+	window.setInterval("showDate()",1000);
+</script>
+</body>
+</html>

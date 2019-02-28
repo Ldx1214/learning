@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	 <head>
+	 <meta charset="UTF-8">
+	 <title>learning</title>
+		<style>
+		* {
+		  margin: 0;
+		  padding: 0;
+		}
+		.menu-bar {
+		  margin:100px;
+		}
+		.menu-bar ul {
+		  list-style-type:none;
+		}
+		.menu-bar a {
+		  text-decoration: none;
+		  color: black;
+		  font-size: 12px;
+		  font-family: "宋体";
+		}
+		.btn {
+		  width: 50px;
+		  height: 28px;
+		  line-height: 28px;
+		  text-align: center;
+		  border: 1px solid #ddd;
+		  background-color: #eee;
+		  display: block;
+		}
+		.menu {
+		  width: 82px;
+		  height: 125px;
+		  padding-top: 1px;
+		  display: none;
+		}
+		.btn:hover + .menu, .menu:hover {
+		  display: block;
+		}
+		.menu-item {
+		  width: 80px;
+		  height: 30px;
+		  line-height: 30px;
+		  padding: 0 10px;
+		  background-color: white;
+		  border-bottom: 1px solid #ddd;
+		  border-right: 1px solid #ddd;
+		  border-left: 1px solid #ddd;
+		  cursor: pointer;
+		}
+		.menu-item:first-child {
+		  border-top: 1px solid #ddd;
+		}
+		.menu-item:hover {
+		  background-color: #ddd;
+		}
+		</style>
+	</head>
+	<body>
+	<div class="menu-bar">
+	  <a class="btn" href="#">java教程</a>
+	  <ul class="menu">
+	    <li class="menu-item">css教程</li>
+	    <li class="menu-item">div教程</li>
+	    <li class="menu-item">js教程</li>
+	  </ul>
+	</div>
+	</body>
+</html>

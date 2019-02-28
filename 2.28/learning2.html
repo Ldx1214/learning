@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+		if (typeof Array.prototype.forEach != "function") {
+		  Array.prototype.forEach = function (fn, context) {
+		    for (var k = 0, length = this.length; k < length; k++) {
+		      if (typeof fn === "function" && Object.prototype.hasOwnProperty.call(this, k)) {
+		        fn.call(context, this[k], k, this);
+		      }
+		    }
+		  };
+		}
+		var func = function (value, index) {
+		  console.log(index + ":" + value);
+		}
+		var arr = ["李东旭", "李发山", "张字芳", "李雨彤"];
+		arr.forEach(func);
+	</script>
+</body>
+</html>

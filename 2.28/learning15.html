@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+	<style>
+		.arrow {
+		  width: 20px;
+		  height: 4px;
+		  margin: 0 auto 7px;
+		  border-left: 4px solid transparent;
+		  border-right: 4px solid transparent;
+		  border-bottom: 4px solid #343c99;
+		  transform: rotate(45deg);
+		  transform-origin: left;
+		}
+		.arrow:after {
+		  content: '';
+		  display: block;
+		  width: 100%;
+		  height: 100%;
+		  border-left: 4px solid transparent;
+		  border-right: 4px solid transparent;
+		  border-top: 4px solid #343c99;
+		  position: absolute;
+		  right: -10px;
+		 top: -14px;
+		 transform: rotate(90deg);
+		 transform-origin: bottom;
+		}
+	</style>
+<body>
+	<div class="arrow"></div>
+</body>
+</html>
