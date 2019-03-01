@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+        function noNumbers(e)
+        {
+            var keynum;
+            var keychar;
+
+            keynum = window.event ? e.keyCode : e.which;
+            keychar = String.fromCharCode(keynum);
+            alert(keynum+':'+keychar);
+        }
+        </script>
+        <input type="text" onkeydown="return noNumbers(event)" />
+    </body>
+</html>

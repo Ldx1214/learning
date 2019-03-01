@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      	<meta charset="UTF-8">
+      	<title>learning</title>
+		<style type="text/css">
+		.top-nav {
+		  font-size: 12px;
+		  font-weight: bold;
+		  list-style: none;
+		}
+		.top-nav li {
+		  float: left;
+		  list-style: none;
+		  margin-right: 1px;
+		}
+		.top-nav li a {
+		  line-height: 25px;
+		  text-decoration: none;
+		  background: #DDDDDD;
+		  color: #666666;
+		  display: block;
+		  width: 80px;
+		  text-align: center;
+		}
+		.top-nav li a:hover {
+		  background: #900;
+		  color: #FFF;
+		}
+		.top-nav ul {
+		  list-style: none;
+		  display: none;
+		  width: 80px;
+		  padding: 0;
+		  position: relative;
+		}
+		.top-nav li ul li ul {
+		  position: absolute;
+		  top: 0;
+		  left: 80px;
+		}
+		.top-nav li:hover ul {
+		  display: block;
+		}
+		.top-nav li:hover ul li ul {
+		  display: none;
+		}
+		.top-nav li ul li:hover ul {
+		  display: block;
+		}
+		</style>
+</head>
+<body>
+  <ul class="top-nav">
+    <li>
+      <a href="#">学习课程</a>
+      <ul>
+        <li>
+          <a href="#">前端课程 +</a>
+          <ul>
+            <li><a href="#">javascript</a></li>
+            <li><a href="#">css</a></li>
+            <li><a href="#">jquery</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">手机开发+</a>
+          <ul>
+            <li><a href="#">ios开发</a></li>
+            <li><a href="#">android开发</a></li>
+            <li><a href="#">WP开发</a></li>
+          </ul>
+        </li>
+        <li><a href="#">后台编程</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">学习中心 +</a>
+      <ul>
+        <li>
+          <a href="#">前端课程 +</a>
+          <ul>
+            <li><a href="#">javascript</a></li>
+            <li><a href="#">css</a></li>
+            <li><a href="#">jquery</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">手机开发</a>
+          <ul>
+            <li><a href="#">ios开发</a></li>
+            <li><a href="#">android开发</a></li>
+            <li><a href="#">WP开发</a></li>
+          </ul>
+        </li>
+        <li><a href="#">后台编程</a></li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>

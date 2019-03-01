@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>learning</title>
+      <style>
+      .progress {
+        width: 200px;
+        height: 200px;
+        border: solid 1px #ccc;
+        position: absolute;
+        transform: rotate(-90deg);
+      }
+      #canvas1, #canvas2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+      }
+      #canvas2 {
+        transform: rotate(90deg);
+      }
+      </style>
+      <script>
+      window.onload = function() {
+        function $id(id) {
+          return typeof id === "string" ? document.getElementById(id) : id;
+        }
+        
+        function progress(maxAngle) {
+          var canvas1 = $id("canvas1");
+          var conText1 = canvas1.getContext("2d");
+          conText1.lineWidth = 10;
+          conText1.beginPath();
+          conText1.strokeStyle = "#ccc";
+          conText1.arc(100, 100, 95, 0, 2 * Math.PI, false);
+          conText1.stroke();
+          conText1.closePath();
+          var canvas2 = $id("canvas2");
+          var conText2 = canvas1.getContext("2d");
+          conText2.lineWidth = 10;
+          var grd = conText2.createLinearGradient(100, 10, 0, 100);
+          grd.addColorStop(1, "#8CE050");
+          grd.addColorStop(0, "#f00");
+          conText2.strokeStyle = grd;
+          var angle = 0;
+          var timer = null;
+          timer = setInterval(function() {
+            if (angle < maxAngle / 100 * 360) {
+              angle++;
+            } else {
+              clearInterval(timer);
+            }
+            var progress = parseInt((angle / 360) * 100);
+            conText2.beginPath();
+            conText2.arc(100, 100, 95, 0, angle * Math.PI / 180, false);
+            conText2.clearRect(0, 0, 200, 200);
+            conText2.stroke();
+            conText2.closePath();
+            conText2.rotate(90 * Math.PI / 180)
+            conText2.font = "30px Arial";
+            conText2.fillStyle = "#000000"
+            var text = progress + "%";
+            conText2.fillText(text, 80, -90);
+            conText2.closePath();
+            conText2.restore();
+          }, 10)
+        }
+        progress(50);
+      }
+      </script>
+  </head>
+  <body>
+    <div class="progress">
+      <canvas id="canvas1" height="200" width="200"></canvas>
+      <canvas id="canvas2" height="200" width="200"></canvas>
+    </div>
+  </body>
+</html>

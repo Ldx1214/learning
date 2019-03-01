@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <title>learning</title>
+  </head>
+  <style type="text/css">
+  canvas{
+    border:dashed 2px #CCC
+  }
+  </style>
+  <script type="text/javascript">
+  function $$(id){
+    return document.getElementById(id);
+  }
+  function pageLoad(){
+    var can = $$('can');
+    var cans = can.getContext('2d');
+    cans.beginPath();
+    cans.arc(200,150,100,0,Math.PI*2,false);
+    cans.closePath();
+    cans.lineWidth = 5;
+    cans.strokeStyle = 'red';
+    cans.stroke();
+  }
+  window.onload=function(){
+    pageLoad();
+  }
+  </script>
+  <body>
+    <canvas id="can" width="400px" height="300px"></canvas>
+  </body>
+</html>

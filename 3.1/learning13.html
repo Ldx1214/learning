@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+  	  <title>learning</title>
+	  <script type="text/javascript">
+	    window.onload = function(){
+	      window.addEventListener("click", function(){
+	        alert("Window - true");
+	      }, true);
+	      document.addEventListener("click", function(){
+	        alert("Document - true");
+	      }, true);
+	      document.documentElement.addEventListener("click", function(){
+	        alert("Html - true");
+	      }, true);
+	      document.body.addEventListener("click", function(){
+	        alert("Body - true");
+	      }, true);
+	      document.getElementById("myDiv").addEventListener("click", function(){
+	        alert("Div - true");
+	      }, true);
+	      window.addEventListener("click", function(){
+	        alert("Window - false");
+	      }, false);
+	      document.addEventListener("click", function(){
+	        alert("Document - false");
+	      }, false);
+	      document.documentElement.addEventListener("click", function(){
+	        alert("Html - false");
+	      }, false);
+	      document.body.addEventListener("click", function(){
+	        alert("Body - false");
+	      }, false);
+	      document.getElementById("myDiv").addEventListener("click", function(){
+	        alert("Div - false");
+	      }, false);
+	      window.onclick = function(){
+	        alert("Window - click");
+	      };
+	      document.onclick = function(){
+	        alert("Document - click");
+	      };
+	      document.documentElement.onclick = function(){
+	        alert("Html - click");
+	      };
+	      document.body.onclick = function(){
+	        alert("Body - click");
+	      };
+	      document.getElementById("myDiv").onclick = function(){
+	        alert("Div - click");
+	      };
+	    }
+	  </script>
+	</head>
+	<body>
+	  <div id="myDiv">点我</div>
+	</body>
+</html>
