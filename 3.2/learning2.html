@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+            function inner(num1,num2){
+                console.log(num2);
+                console.log(arguments.length);
+                console.log(arguments[0]);
+            }
+            function add(num1,num2){
+                arguments[0]=99;
+                console.log(num1);
+            }
+            function getArray(){
+              var sum=0;
+              var value;
+                  for(var i=0;i<arguments.length;i++){
+                     value=(sum+=arguments[i])/arguments.length;
+                  }
+                  console.log(value);
+                  return value;
+            }
+            getArray(5,66,45,32,88);
+</script>
+</body>
+</html>

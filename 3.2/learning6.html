@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+		function add(i,j){
+		  console.log(this);
+		  console.log(arguments);
+		  (function(){
+		      console.log(this);
+		  })();
+		  var sum = i+j;
+		  return sum;
+		}
+		add(1,2);
+		var myNumber = {
+		  value: 1,
+		  add: function(i){
+		    console.log(this);
+		    var helper = function(i){
+		        console.log(this);
+		          this.value += i;
+		    }
+		    helper(i);
+		  }
+		}
+		myNumber.add(1);
+	</script>
+</body>
+</html>

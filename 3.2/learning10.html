@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style type="text/css">
+		body {
+		  background: #ccc;
+		}
+		.nav {
+		  width: 700px;
+		  height: 40px;
+		  margin: 200px auto;
+		}
+		.nav a {
+		  position: relative;
+		  display: inline-block;
+		  padding: 20px;
+		  text-decoration: none;
+		  color: #999;
+		  font-size: 18px;
+		  font-weight: 700;
+		  padding-bottom: 8px;
+		}
+		.nav a:after {
+		  content: "";
+		  position: absolute;
+		  bottom: 0;
+		  left: 40%;
+		  right: 40%;
+		  width: 20%;
+		  border-bottom: 3px solid #6bc30d;
+		  opacity: 0.5;
+		  transition: all linear 0.5s;
+		}
+		.nav a:hover {
+		  color: #fff;
+		}
+		.nav a:hover:after {
+		  left: 0;
+		  width: 100%;
+		  opacity: 1.0;
+		  transition: all linear 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+    <a href="#">李东旭一</a>
+    <a href="#">李东旭二</a>
+    <a href="#">李东旭三</a>
+    <a href="#">李东旭四</a>
+    <a href="#">李东旭五</a>
+  </div>
+</body>
+</html>
