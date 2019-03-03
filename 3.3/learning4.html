@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<script type="text/javascript"> 
+		window.onload=function(){
+		  var obox=document.getElementById("box");
+		  var lis=obox.getElementsByTagName("li");
+		  for(var i=0;i<lis.length;i++){ 
+		    lis[i].index=i;
+		    lis[i].onclick = function () { alert(this.index) }
+		  } 
+		}
+	</script>
+</head>
+<body>
+	<p>
+		点击每一个li
+	</p>
+	<ul id="box">
+	  <li>李东旭一</li>
+	  <li>李东旭二</li>
+	  <li>李东旭三</li>
+	  <li>李东旭四</li>
+	</ul>
+</body>
+</html>
