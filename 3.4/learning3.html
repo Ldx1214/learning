@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style type="text/css">
+		.demo, .img, .mask, .border {
+		  width: 300px;
+		  height: 300px;
+		  border-radius: 50%;
+		}
+		.demo {
+		  position: relative;
+		  display: block;
+		}
+		.img {
+		  background-size: cover;
+		  background-position: 50% 50%;
+		}
+		.mask, .border {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		}
+		.mask {
+		  text-align: center;
+		  color: rgba(255,255,255,0);
+		  transition: all 0.6s ease-in;
+		}
+		.info {
+		  margin-top: 50%;
+		  transform: translateY(-50%);
+		}
+		.border {
+		  border: 10px solid #10aeff;
+		  box-sizing: border-box;
+		  border-top-color: yellow;
+		  border-left-color: yellow;
+		  transition: all 0.6s ease-in;
+		}
+		.demo:hover .mask {
+		  background-color: rgba(0,0,0,0.3);
+		  color: rgba(255,255,255,1);
+		}
+		.demo:hover .border {
+		  transform: rotate(180deg);
+		}
+	</style>
+</head>
+<body>
+	<a href="#" class="demo">
+    <div class="img"></div>
+    <div class="mask">
+      <div class="info">
+        <h2>李东旭</h2>
+        <p>努力才有好未来</p>
+      </div>
+    </div>
+    <div class="border"></div>
+  </a>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+		var Color = function() {
+		  if (!(this instanceof Color)) {
+		   var color = new Color();
+		   color._init.apply(color, arguments);
+		   return color;
+		  }
+		  if (arguments.length) {
+		   this._init.apply(this, arguments);
+		  }
+		}
+		var methods = ["red", "green", "blue", "colorValue"];
+		var defineSetGetMethod = function(fn, methods) {
+		  var fnPrototype = fn.prototype;
+		  for (var i = 0; i < methods.length; i++) {
+		    var methodName = methods[i].charAt(0).toLocaleUpperCase() + methods[i].substring(1);
+		    fn.prototype['set' + methodName] = new Function("value", "this." + methods[i] + "= value;");
+		    fn.prototype['get' + methodName] = new Function("return this." + methods[i] + ";");
+		   fn.prototype['toString'] = new Function('return "rgb("+this.red+","+this.green+","+this.blue+")";');
+		  }
+		};
+		defineSetGetMethod(Color, methods);
+		var extend = function(fn, option) {
+		  var fnPrototype = fn.prototype;
+		  for (var i in option) {
+		    fnPrototype[i] = option[i];
+		  }
+		};
+		extend(Color, {
+		  _init : function() {
+		   if (arguments.length == 3) {
+		    this.red = arguments[0];
+		    this.green = arguments[1];
+		    this.blue = arguments[2];
+		    this.getColorValue();
+		   } else {
+		    var colorValue = arguments[0].replace(/^\#{1}/, "");
+		    if (colorValue.length == 3) {
+		     colorValue = colorValue.replace(/(.)/g, '$1$1');
+		    }
+		    this.red = parseInt('0x' + colorValue.substring(0, 2), 16);
+		    this.green = parseInt('0x' + colorValue.substring(2, 4), 16);
+		    this.blue = parseInt('0x' + colorValue.substring(4), 16);
+		    this.colorValue = "#" + colorValue;
+		   }
+		  },
+		  getColorValue : function() {
+		   if (this.colorValue) {
+		    return this.colorValue;
+		   }
+		   var hR = this.red.toString(16);
+		   var hG = this.green.toString(16);
+		   var hB = this.blue.toString(16);
+		   return this.colorValue = "#" + (this.red < 16 ? ("0" + hR) : hR) + (this.green < 16 ? ("0" + hG) : hG) + (this.blue < 16 ? ("0" + hB) : hB);
+		  }
+		});
+		console.log(Color(12,34,56));
+		console.log(Color("#fff"));
+		console.log(Color("#defdcd"));
+	</script>
+</body>
+</html>

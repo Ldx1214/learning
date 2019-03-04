@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learning</title>
+	<style type="text/css">
+	body{
+	  background:#202020;
+	  font:bold 12px Arial, Helvetica, sans-serif;
+	  margin:0;
+	  padding:0;
+	  min-width:960px;
+	  color:#bbbbbb;
+	}
+	a{
+	  text-decoration:none;
+	  color:#fff;
+	}
+	h1{
+	  font: 4em normal Arial, Helvetica, sans-serif;
+	  padding: 20px; margin: 0;
+	  text-align:center;
+	}
+	h1 small{
+	  font: 0.2em normal Arial, Helvetica, sans-serif;
+	  text-transform:uppercase;
+	  letter-spacing: 0.2em;
+	  line-height: 5em;
+	  display: block;
+	}
+	header{
+	  padding:0 40px;
+	  margin:0 auto;
+	  position:relative;
+	  width:915px;
+	  height:145px;
+	}
+	header nav ul{
+	  list-style:none;
+	  padding-top:50px;
+	}
+	header nav li{
+	  position:relative;
+	  float:left;
+	  width:150px;
+	  text-align:center;
+	  padding-top:35px;
+	  padding-bottom:35px;
+	  color:#fff;
+	  margin-right:20px;
+	  border-radius:5px;
+	  background:#161616;
+	  border-bottom:1px solid #333;
+	  border-left:1px solid #000;
+	  border-right:1px solid #333;
+	  border-top:1px solid #000;
+	  cursor:pointer;
+	}
+	li:after, li:before{
+	  -moz-transition:width 0.5s ease 0s;
+	  height:0px;
+	  width:0px;
+	  position:absolute;
+	  content:' ';
+	  display:block;
+	  opacity:0;
+	  box-shadow:0px 0px 5px #00c6ff;
+	}
+	li:after{
+	  background:-moz-linear-gradient(left, #0ad, #08b);
+	  top:84px;
+	  left:75px;
+	}
+	li:before{
+	  background:-moz-linear-gradient(right, #0ad, #08b);
+	  top:84px;
+	  right:75px;
+	}
+	li:hover:after,li:hover:before{
+	  width: 72px;
+	  height: 1px;
+	  opacity:1;
+	}
+	</style>
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#">首页</a></li>
+      <li><a href="#">java教程</a></li>
+      <li><a href="#">javascript教程</a></li>
+      <li><a href="#">css教程</a></li>
+      <li><a href="#">softwhy.com</a></li>
+    </ul>
+  </nav>
+</header>
+</body>
+</html>
