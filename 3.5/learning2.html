@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style>
+		* {
+		  margin: 0px;
+		  padding: 0px;
+		}
+		.box-with-text {
+		  background-image: linear-gradient(crimson 50%, white 50%);
+		  background-repeat: repeat;
+		  background-position: 0 0;
+		  background-size: 100% 50px;
+		  text-fill-color: transparent;
+		  background-clip: text;
+		  animation: stripes 2s linear infinite;
+		}
+		  
+		@keyframes stripes {
+		  100% {
+		    background-position: 0 -50px;
+		  }
+		}
+		body {
+		  overflow: hidden;
+		  background: #000;
+		  color: #FFF;
+		}
+		  
+		.box-with-text {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  white-space: nowrap;
+		  text-align: center;
+		  text-transform: uppercase;
+		  font: bold 26vmax/.8 Open Sans, Impact;
+		  transform: translateX(-50%) translateY(-50%);
+		}
+	</style>
+</head>
+<body>
+	<div class="box-with-text">李东旭</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style type="text/css">
+		 *{
+		 	margin:0px;padding:0px;
+		 }
+		 #nav{
+		 	width:280px;
+		 	height:500px;
+		 	margin:50px;
+		 	perspective:400px;
+		 	float:left;
+		 }
+		 #nav p{
+		 	height:40px;
+		 	width:200px;
+		 	font-size:18px;
+		 	font-family:"微软雅黑";
+		 	text-align:center;
+		 	line-height:40px;
+		 }
+		 #nav ul li{
+		 	width:200px;
+		 	height:40px;
+		 	list-style:none;
+		 	position:relative;
+		 	transform-style:preserve-3d;
+		 	transition:0.5s;
+		 	display:block;
+		 	margin:1px;
+		 	cursor:pointer;
+		 }
+		 #nav ul li:hover{
+		 	transform:translateZ(30px) rotateX(360deg) scale(1.1);
+		 }
+		 #nav ul li div:nth-child(1){
+		 	height:40px;width:200px;
+		 	background:#f96;
+		 }
+		 #nav ul li div p{
+		 	font-size:16px;
+		 	font-family:"微软雅黑";
+		 	text-align:center;
+		 	line-height:40px;
+		 }
+		 #nav1{
+		 	width:280px;
+		 	height:500px;
+		 	margin:50px;
+		 	perspective:400px;
+		 	float:left;
+		 }
+		 #nav1 p{
+		 	height:40px;
+		 	width:200px;
+		 	font-size:18px;
+		 	font-family:"微软雅黑";
+		 	text-align:center;
+		 	line-height:40px;
+		 }
+		 #nav1 ul li{
+		 	width:200px;
+		 	height:40px;
+		 	list-style:none;
+		 	position:relative;
+		 	transform-style:preserve-3d;
+		 	transition:0.5s;
+		 	display:block;
+		 	margin:1px;
+		 	cursor:pointer;
+		 }
+		 #nav1 ul li div:nth-child(1){
+		 	height:40px;
+		 	width:200px;
+		 	background:#f96;
+		 }
+		 #nav1 ul li div p{
+		 	font-size:16px;
+		 	font-family:"微软雅黑";
+		 	text-align:center;
+		 	line-height:40px;
+		 }
+		 #nav1 ul li:hover{
+		 	transform:translateZ(30px) scale(1.1);
+		 }
+		 #nav2{
+		 	width:280px;
+		 	height:500px;
+		 	margin:50px;
+		 	perspective:400px;
+		 	float:left;
+		 }
+		 #nav2 p{
+		 	height:40px;
+		 	width:200px;
+		 	font-size:18px;
+		 	font-family:"微软雅黑";
+		 	text-align:center;
+		 	line-height:40px;
+		 }
+		 #nav2 ul li{
+		 	width:200px;
+		 	height:40px;
+		 	list-style:none;
+		 	position:relative;
+		 	transform-style:preserve-3d;
+		 	transition:0.5s;
+		 	display:block;
+		 	margin:1px;
+		 	cursor:pointer;
+		 }
+		 #nav2 ul li div:nth-child(1){
+		 	height:40px;
+		 	width:200px;
+		 	background:#f96;
+		 }
+		 #nav2 ul li div p{
+		 	font-size:16px;
+		 	font-family:"微软雅黑";
+		 	text-align:center;
+		 	line-height:40px;
+		 }
+		 #nav2 ul li:hover{
+		 	transform:rotateY(360deg) scale(1.1);
+		 }
+	</style>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+			<li>
+			<div><p>Home</p></div></li>
+			<li>
+			<div><p>javascript</p></div></li>
+			<li>
+			<div><p>div+css</p></div></li>
+			<li>
+			<div><p>Tel</p></div></li>
+			<li>
+			<div><p>Abouet</p></div></li>
+		</ul>
+		<p>前后翻转</p>
+	</div>
+	<div id="nav1">
+		<ul>
+			<li>
+			<div><p>Home</p></div></li>
+			<li>
+			<div><p>javascript</p></div></li>
+			<li>
+			<div><p>div+css</p></div></li>
+			<li>
+			<div><p>Tel</p></div></li>
+			<li>
+			<div><p>Abouet</p></div></li>
+		</ul>
+		<p>上浮</p>
+	</div>
+	<div id="nav2">
+		<ul>
+			<li>
+			<div><p>Home</p></div></li>
+			<li>
+			<div><p>javascript</p></div></li>
+			<li>
+			<div><p>div+css</p></div></li>
+			<li>
+			<div><p>Tel</p></div></li>
+			<li>
+			<div><p>Abouet</p></div></li>
+		</ul>
+		<p>左右翻转</p>
+	</div>
+	<div style="text-align:center;margin:10px 0; font:normal 14px/24px 'MicroSoft YaHei';clear:both;">
+	</div>
+</body>
+</html>
