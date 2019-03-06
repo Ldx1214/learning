@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learninga</title>
+	<script type="text/javascript">
+		function IniEvent() {
+		  var tbl = document.getElementById("tblMain");
+		  var trs = tbl.getElementsByTagName("tr");
+		  for (var index=0;index<trs.length;index++){
+		    trs[index].onclick=TrOnClick;
+		  }
+		}
+		function TrOnClick(){
+		  var tbl=document.getElementById("tblMain");
+		  var trs=tbl.getElementsByTagName("tr");
+		  for (var index=0;index<trs.length;index++){
+		    if(trs[index]==this){
+		      trs[index].style.background="red";
+		    }
+		    else{
+		      trs[index].style.background="white";
+		    }
+		  }
+		}
+		window.onload=function(){
+		  IniEvent();
+		}
+	</script>
+</head>
+<body>
+<table id="tblMain" border="1">
+<tr>
+  <td>1</td>
+  <td>点击每一行</td>
+  <td>点击每一行</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>点击每一行</td>
+  <td>点击每一行</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>点击每一行</td>
+  <td>点击每一行</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>点击每一行</td>
+  <td>点击每一行</td>
+</tr>
+</table>
+</body>
+</html>

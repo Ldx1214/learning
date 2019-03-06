@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<script type="text/javascript"> 
+		function add(){ 
+		  var element=document.createElement("p"); 
+		  var node=document.createTextNode("李东旭"); 
+		  element.appendChild(node); 
+		  obox= document.getElementById("box"); 
+		  obox.appendChild(element); 
+		} 
+		window.onload=function(){
+		  var obt=document.getElementById("bt");
+		  obt.onclick=function(){
+		    add()
+		  }
+		}
+	</script> 
+</head>
+<body>
+	<div id="box"> 
+		<p>李东旭</p> 
+	</div> 
+	<input type="button" id="bt" value="添加"/> 
+</body>
+</html>
