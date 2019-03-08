@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style type="text/css">
+	#thediv{
+	  width:100px;
+	  height:100px;
+	  background-color:red;
+	}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script>
+		$(document).ready(function(){
+		  $("#outbt").click(function(){
+		    $("#thediv").fadeOut();
+		  })
+		  $("#inbt").click(function(){
+		    $("#thediv").fadeIn();
+		  })
+		})
+	</script>
+</head>
+<body>
+	<div id="thediv"></div>
+	<input type="button" value="点击淡出" id="outbt"/>
+	<input type="button" value="点击淡入" id="inbt"/>
+</body>
+</html>
