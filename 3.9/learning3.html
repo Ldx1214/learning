@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<script type="text/javascript"> 
+		window.onload = function(){ 
+		  var tab = document.getElementById("tab"); 
+		  var col =0; 
+		    
+		  megercell(tab, col); 
+		  megercell1(tab, col+1); 
+		}
+		function megercell(tab, col){ 
+		  count = 1; 
+		  val = ""; 
+		  for(var i=0; i<tab.rows.length; i++){ 
+		    if(val == tab.rows[i].cells[col].innerHTML){ 
+		      count++; 
+		    }
+		    else{ 
+		      if(count > 1){ 
+		        from = i - count; 
+		        tab.rows[from].cells[col].rowSpan = count; 
+		        for(var j=from+1; j<i; j++){ 
+		          tab.rows[j].cells[col].style.display = "none"; 
+		        } 
+		        count = 1; 
+		      } 
+		      val = tab.rows[i].cells[col].innerHTML; 
+		    } 
+		  } 
+		} 
+		function megercell1(tab, col){ 
+		  count = 1; 
+		  val = ""; 
+		  var rowspan = 0; 
+		  for(var i=0; i<tab.rows.length;){ 
+		    rowspan = parseInt(tab.rows[i].cells[0].getAttribute("rowspan")); 
+		    if(rowspan){ 
+		      for(var n = 0; n < rowspan; n++){ 
+		        if(val == tab.rows[i].cells[col].innerHTML){ 
+		          count++; 
+		        }
+		     else{ 
+		          if(count > 1){ 
+		            from = i - count; 
+		            tab.rows[from].cells[col].rowSpan = count; 
+		            for(var j=from+1; j<i; j++){ 
+		              tab.rows[j].cells[col].style.display = "none"; 
+		            } 
+		            count = 1; 
+		          } 
+		          val = tab.rows[i].cells[col].innerHTML;
+		        } 
+		        i++; 
+		      } 
+		      if(count　> 1){ 
+		        from = i - count; 
+		        tab.rows[from].cells[col].rowSpan = count; 
+		        for(var j=from+1; j<i; j++){ 
+		          tab.rows[j].cells[col].style.display = "none"; 
+		        } 
+		      } 
+		      count = 1; 
+		      val = ""; 
+		    } 
+		    else { 
+		      i++; 
+		    } 
+		  } 
+		} 
+	</script>
+</head>
+<body>
+	  <table width="100%" border="1" cellspacing="0" cellpadding="0" id="tab">
+	  <tr>
+	    <td rowspan="0">张三 </td>
+	    <td>男 </td>
+	    <td>22 </td>
+	    <td>数学 </td>
+	    <td>90 </td>
+	  </tr>
+	  <tr>
+	    <td rowspan="0">张三 </td>
+	    <td>男 </td>
+	    <td>22 </td>
+	    <td>数学 </td>
+	    <td>90 </td>
+	  </tr>
+	  <tr>
+	    <td rowspan="0">张三 </td>
+	    <td>女 </td>
+	    <td>22 </td>
+	    <td>语文 </td>
+	    <td>70 </td>
+	  </tr>
+	  <tr>
+	    <td rowspan="0">张三 </td>
+	    <td>女 </td>
+	    <td>22 </td>
+	    <td>英语 </td>
+	    <td>60 </td>
+	  </tr>
+	  <tr>
+	    <td rowspan="0">李四 </td>
+	    <td>女 </td>
+	    <td>22 </td>
+	    <td>数学 </td>
+	    <td>60 </td>
+	  </tr>
+	  <tr>
+	    <td rowspan="0">李四 </td>
+	    <td>女 </td>
+	    <td>19 </td>
+	    <td>语文 </td>
+	    <td>60 </td>
+	  </tr>
+	  <tr>
+	    <td rowspan="0">王五 </td>
+	    <td>男 </td>
+	    <td>19 </td>
+	    <td>英语 </td>
+	    <td>60 </td>
+	  </tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style type="text/css">
+		div{
+		  width:150px;
+		  height:50px;
+		  background:red;
+		}
+	</style>
+	<script type="text/javascript"> 
+	window.onload=function(){
+	  var oleft=document.getElementById("left");
+	  var oright=document.getElementById("right");
+	  if(document.all){
+	    oleft.style.styleFloat="left";
+	    oright.style.styleFloat="right";
+	  }
+	  else{
+	    oleft.style.cssFloat="left";
+	    oright.style.cssFloat="right";
+	  }
+	} 
+	</script> 
+</head>
+<body>
+	<div id="left">
+	</div>
+	<div id="right">
+	</div>
+</body>
+</html>
