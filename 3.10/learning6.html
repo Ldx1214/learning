@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var txt=""
+    function myfunction()
+    {
+        try
+        {
+            alert("这是一个提示框...")
+        }catch(err)
+            {
+            txt="有一个错误... \n\n"
+            txt+="错误描述:" + err.description + "\n\n"
+            txt+="请按Enter继续... \n\n"
+            alert(txt)
+            }
+    }
+</script>
+<input type="button" onclick="myfunction()" value="点击">
+</body>
+</html>

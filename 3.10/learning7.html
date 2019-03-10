@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <title>learning</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var num = prompt("请输入数字1到10","")
+			try
+			{
+			    if(num<0)   
+			        throw "Error1"
+			    else if(num>10)
+			        throw "Error2"
+			    else if(isNaN(num))
+			        throw "Error3"
+			}catch(err)
+			{
+			    if(err=="Error1")
+			        alert("太小了...")
+			    if(err=="Error2")
+			        alert("太大了...")
+			    if(err=="Error3")
+			        alert("这不是一个数字...")
+			}
+		</script>
+	</body>
+</html>
