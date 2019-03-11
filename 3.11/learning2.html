@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>learning</title>
+		<style>
+		#top,#bottom{
+		    width:150px;
+		    height:60px;
+		    line-height:60px;
+		    text-align: center;
+		    background-color: #ccc;
+		    margin:10px;
+		    position: relative;
+		}
+		#top div,#bottom div{
+		    width:100px;
+		    height:50px;
+		    text-align:center;
+		    line-height:50px;
+		    position: relative;
+		    left:150px;
+		    color:white;
+		    background-color:blue;
+		}
+		</style>
+		<script>
+		window.onload=function(){
+		    let top=document.querySelector("#top");
+		    let bottom=document.querySelector("#bottom");
+		    top.onmouseout=function(){
+		        this.firstElementChild.innerHTML="李东旭一";
+		    }
+		    bottom.onmouseleave=function(){
+		        this.firstElementChild.innerHTML="李东旭二";
+		    }
+		 
+		}
+		</script>  
+	</head>
+	<body> 
+		<div id="top">
+		<div></div>
+		</div>
+		<div id="bottom">
+		<div></div>
+		</div>
+	</body>
+</html>

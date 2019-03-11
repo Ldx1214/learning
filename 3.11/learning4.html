@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<script> 
+		window.onload=function(){
+		  let txt=document.getElementById("txt");
+		  let st=document.getElementById("st");
+		  let form=document.forms[0];
+		  form.onsubmit=function(){
+		    if(txt.value==""){
+		      alert("请先写一些内容");
+		      txt.focus();
+		      return false;
+		    }
+		  }
+		  document.onkeydown = function(e){
+		    if(ev.keyCode==13&&document.activeElement === form) {
+		      form.submit();
+		    }
+		  }
+		}
+	</script> 
+</head>
+<body>
+	<form action="#" id="fm">
+	  <input type="text" id="txt" name="txt">
+	  <input type="submit" id="st" name="st">
+	</form>
+</body>
+</html>

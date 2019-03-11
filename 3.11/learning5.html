@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<script>
+		window.onload=function(){
+		  let otxt=document.getElementById("txt");
+		  let oshow=document.getElementById("show");
+		  let count=0;
+		  if(document.all){
+		     otxt.onpropertychange=function(){
+		       count=count+1;
+		       oshow.innerHTML=count;
+		     }
+		  }
+		  else{
+		    otxt.oninput=function(){
+		      count=count+1;
+		      oshow.innerHTML=count;
+		    }
+		  }
+		}
+	</script>
+</head>
+<body>
+	<div id="show"></div>
+	<input type="text" id="txt"/>
+</body>
+</html>
