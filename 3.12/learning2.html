@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<input type="checkbox" id="cb1" onclick="fun0()"/>全选/全不选
+	</br>
+	<input type="checkbox" name="love">篮球<br/>
+	<input type="checkbox" name="love">足球<br/>
+	<input type="checkbox" name="love">排球<br/>
+	<input type="checkbox" name="love">冰球<br/>
+	 
+	<input type="button" value="全选" onclick="selall()"/>
+	<input type="button" value="全不选" onclick="selno()"/>
+	<script type="text/javascript">
+	function fun0(){
+	var cb = document.getElementById("cb1");
+	if(cb.checked==true){
+		selall();
+	}else{
+		selno();
+	}
+	}
+	function selall(){
+	var nodes = document.getElementsByName("love");
+	for(var i = 0; i < nodes.length; i++){
+		var node1 = nodes[i];
+		node1.checked = true;
+	}
+	}
+	function selno(){
+		var nodes = document.getElementsByName("love");
+		for(var j = 0; j < nodes.length; j++){
+			nodes[j].checked = false;
+		}
+	}
+	</script>
+</body>
+</html>

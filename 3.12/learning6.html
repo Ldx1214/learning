@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+</head>
+<body>
+	<script>
+		var fnArr = []
+		for (var i = 0; i < 10; i ++) {
+		 fnArr[i] = (function(j){
+			 return function(){
+			 return j
+		 } 
+		 })(i)
+		}
+		console.log( fnArr[3]() )
+		var fnArr = []
+			for (var i = 0; i < 10; i ++) {
+		 (function(i){
+		 fnArr[i] = function(){
+		 	return i
+		 } 
+		 })(i)
+		}
+		console.log( fnArr[3]() )
+		var fnArr = []
+		for (let i = 0; i < 10; i ++) {
+		 	fnArr[i] = function(){
+		 	return i
+		 } 
+		}
+		console.log( fnArr[3]() )
+	</script>
+</body>
+</html>
