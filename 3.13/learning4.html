@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style>
+	ul li{
+	  list-style:none;
+	  font-size:12px;
+	}
+	</style>
+	<script type="text/javascript">
+	function nth(parent,ele,num){
+	  var _ele=Array.prototype.slice.call(parent.childNodes),eleArray=[];
+	  for(var index= 0,len=_ele.length;index<len;index++){
+	    if(_ele[index].nodeType==1){
+	      eleArray.push(_ele[index]);
+	    }
+	  }
+	  if(arguments.length===2){
+	    if(typeof arguments[1]==="string"){
+	      _ele=Array.prototype.slice.call(parent.getElementsByTagName(arguments[1]));
+	      return _ele;
+	    }
+	    else if(typeof arguments[1]==="number"){
+	      return eleArray[arguments[1]];
+	    }
+	  }
+	  else{
+	    _ele=Array.prototype.slice.call(parent.getElementsByTagName(ele));
+	    return _ele[num];
+	  }
+	}
+	  
+	window.onload=function(){
+	  var list=document.getElementById("list");
+	  console.log(nth(list,"li",2).innerHTML);
+	  console.log(nth(list,"button",3).innerHTML)
+	  console.log(nth(nth(list,"li",1),"button",1).innerHTML);
+	  console.log(nth(nth(list,"li",1),"button"));
+	  console.log(nth(list,2));
+	}
+	</script>
+</head>
+<body>
+	<ul id="list">
+	  <li>1<button>a</button></li>
+	  <li>2<button>n</button><button>t</button></li>
+	  <p>李东旭</p>
+	  <li>3<button>z</button></li>
+	  <li>4<button>o</button></li>
+	  <li>5<button>n</button></li>
+	  <li>6<button>e</button></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style type="text/css">
+	*{
+	  list-style:none;
+	  margin:0;
+	  padding:0;
+	  overflow:hidden
+	}
+	#tab{
+	  width:401px;
+	  border-top:#A8C29F solid 1px;
+	  border-bottom:#A8C29F solid 1px;
+	  margin:50px 200px;
+	}
+	.menu{
+	  width:400px;
+	  background:#eee;
+	  height:28px;
+	  border-right:#A8C29F solid 1px;
+	  border-bottom:#A8C29F solid 1px;
+	}
+	li{
+	  float:left;
+	  width:99px;
+	  text-align:center;
+	  line-height:28px;
+	  height:28px;
+	  cursor:pointer;
+	  border-left:#A8C29F solid 1px;
+	  color:#666;
+	  font-size:14px;
+	  overflow:hidden
+	}
+	.menudiv{
+	  width:399px;
+	  height:300px;
+	  border-left:#A8C29F solid 1px;
+	  border-right:#A8C29F solid 1px;
+	  border-top:0;
+	  background:#fefefe
+	}
+	.menudiv div{
+	  padding:15px;
+	  line-height:28px;
+	}
+	.off{
+	  background:#E0E2EB;
+	  color:#336699;
+	  font-weight:bold
+	}
+	</style>
+	<script type="text/javascript"> 
+	window.onload=function(){ 
+	  var otab=document.getElementById("tab");
+	  var lis=otab.getElementsByTagName("li");
+	  var omenudiv=document.getElementById("box");
+	  var divs=omenudiv.children;
+	  var lis_len=lis.length;
+	  
+	  for(var index=0;index<lis_len;index++){
+	    lis[index]._index=index;
+	    lis[index].onclick=function(){
+	      for(var j=0;j<lis_len;j++){
+	        lis[j].className="";
+	        divs[j].style.display="none";
+	      }
+	      this.className="off";
+	      divs[this._index].style.display="block";
+	    }
+	  }
+	} 
+	</script>
+</head>
+<body>
+	<div id="tab">
+	  <div class="menu">
+	    <ul>
+	      <li class="off">标签1</li>
+	      <li>标签2</li>
+	      <li>标签3</li>
+	      <li>标签4</li>
+	    </ul>
+	  </div>
+	  <div class="menudiv" id="box">
+	    <div>
+	      <h4 style="color:red">标签1-内容</h4>
+	    </div>
+	    <div style="display:none;">
+	      <h4 style="color:red">标签2-内容</h4>
+	    </div>
+	    <div style="display:none;">
+	      <h4 style="color:red">标签3-内容</h4>
+	    </div>
+	    <div style="display:none;">
+	      <h4 style="color:red">标签4-内容</h4>
+	    </div>
+	  </div>
+	</div>
+</body>
+</html>
