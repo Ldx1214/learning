@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style>
+	#box {
+	  width: 280px;
+	  border: #999 1px solid;
+	  padding: 10px;
+	}
+	p {
+	  line-height: 24px;
+	}
+	a {
+	  color: #096;
+	  cursor: pointer;
+	}
+	</style>
+	<script>
+	window.onload = function () {
+	  textShow(box, 30)
+	}
+	function textShow(obj, num) {
+	  var oSpan = obj.getElementsByTagName("span")[0];
+	  var oA = obj.getElementsByTagName("a")[0];
+	  var str = oSpan.innerHTML;
+	  var onOff = true;
+	  
+	  oSpan.innerHTML = str.substring(0, num);
+	  oA.onclick = function () {
+	    if (onOff) {
+	      oSpan.innerHTML = str;
+	      oA.innerHTML = "收起";
+	    } else {
+	      oSpan.innerHTML = str.substring(0, num);
+	      oA.innerHTML = "...展开";
+	    }
+	    onOff = !onOff;
+	  }
+	}
+	</script>
+</head>
+<body>
+	<div id="box">
+	  <p>
+	    <span>事件委托
+		只指定一个事件处理程序，就可以管理某一类型的所有事件。字符串转换成数字两种方法parseInt 转换成整数parseFloat 转换成小数箭头函数和普通函数区别箭头函数作为匿名函数,是不能作为构造函数的,不能使用new
+		</span>
+	    <a>展开..</a>
+	  </p>
+	</div>
+</body>
+</html>

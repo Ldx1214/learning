@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learning</title>
+	<style type="text/css">
+	div {
+	  width: 150px;
+	  height: 150px;
+	  background-color: #8B0000;
+	  float: left;
+	  margin: 10px;
+	  border: 3px solid #599;
+	  filter: alpha(opacity: 30);
+	  opacity: 0.3;
+	}
+	</style>
+	<script>
+	window.onload = function() {
+	  var aDiv = document.getElementsByTagName("div");
+	  for (var index = 0; index < aDiv.length; index++) {
+	    aDiv[index].timer = null;
+	    aDiv[index].alpha = 30;
+	    aDiv[index].onmouseover = function () {
+	      startMove(this, 100);
+	    }
+	    aDiv[index].onmouseout = function () {
+	      startMove(this, 30);
+	    }
+	  }
+	}
+	function startMove(obj, iTarget) {
+	  clearInterval(obj.timer);
+	  obj.timer = setInterval(function() {
+	    var speed = (iTarget - obj.alpha) / 10;
+	    speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+	    if (obj.alpha == iTarget) {
+	      clearInterval(obj.timer);
+	    } else {
+	      obj.alpha += speed;
+	      obj.style.filter = "alpha(opacity:" + obj.alpha + ")";
+	      obj.style.opacity = obj.alpha / 100;
+	    }
+	  }, 30);
+	}
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

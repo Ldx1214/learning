@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>learning</title>
+<style>
+a {
+  color: #fff;
+  text-decoration: none;
+} 
+ul {
+  margin: 0;
+  list-style: none;
+} 
+#menu {
+  width: 500px;
+  height: 60px;
+  background: #06F;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px #0066FF;
+}
+#menu li {
+  float: left;
+  margin-top: 10px;
+  line-height: 22px;
+  padding: 0;
+  position: relative;
+} 
+#menu li a {
+  padding: 10px 20px;
+  display: inline-block;
+} 
+#menu li .hover {
+  background: #fff;
+  opacity: 0.5;
+  color: #06F;
+  border-radius: 5px;
+} 
+#menu li .lis {
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  background: #FC6;
+  position: absolute;
+  top: 70px;
+}
+  
+#menu li .lis a {
+  padding: 0 10px;
+  background: none;
+  opacity: 1;
+  color: #fff;
+}
+  
+#menu li .lis a:hover {
+  text-decoration: underline;
+}
+</style>
+<script>
+window.onload = function() {
+  var oUl = document.getElementById('menu');
+  var aLi = oUl.getElementsByTagName('li');
+  var aDiv = oUl.getElementsByTagName('div');
+  var timer = null;
+  for (var i = 0; i < aLi.length; i++) {
+    var oA = aLi[i].getElementsByTagName('a')[0];
+    oA.index = i;
+    clearTimeout(timer);
+    oA.onmouseover = function() {
+      this.className = 'hover';
+      aDiv[this.index].style.display = 'block';
+    }
+    oA.onmouseout = function() {
+      this.className = '';
+      n = this.index;
+      timer = setTimeout(function() {
+        aDiv[n].style.display = 'none';
+      }, 200);
+    }
+    aDiv[i].onmouseover = function() {
+      clearTimeout(timer);
+      this.style.display = 'block';
+    }
+    aDiv[i].onmouseout = function() {
+      this.style.display = 'none';
+    }
+  }
+}
+</script>
+</head>
+<body>
+<div>
+  <ul id="menu">
+    <li>
+      <a href="javascript:;">首页</a>
+      <div class="lis" style="display:none;">
+        <a href="javascript:;">最新活动</a>
+        <a href="javascript:;">最新更新</a>
+        <a href="javascript:;">最新课程</a>
+      </div>
+    </li>
+    <li>
+      <a href="javascript:;">关于我们</a>
+      <div class="lis" style="display:none;">
+        <a href="javascript:;">企业文化</a>
+        <a href="javascript:;">联系我们</a>
+        <a href="javascript:;">客服</a>
+      </div>
+    </li>
+    <li>
+      <a href="javascript:;">课程</a>
+      <div class="lis" style="display:none;">
+        <a href="javascript:;">HTML5课程</a>
+        <a href="javascript:;">js课程</a>
+        <a href="javascript:;">css3课程</a>
+      </div>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
